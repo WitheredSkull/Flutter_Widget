@@ -13,7 +13,8 @@ class Splash extends StatelessWidget {
     );
   }
 
-  _getHome() => Scaffold(
+  _getHome() =>
+      Scaffold(
         backgroundColor: Colors.lightBlue,
         appBar: AppBar(
           title: Text(title),

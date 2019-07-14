@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget/view/homePage/FirstPage.dart';
+import 'package:flutter_widget/view/homePage/SecondPage.dart';
+import 'package:flutter_widget/view/homePage/ThirdPage.dart';
 
 class WidgetSamplePage extends StatefulWidget {
   var title = ["第一页", "第二页", "第三页"];
@@ -11,7 +14,7 @@ class WidgetSamplePage extends StatefulWidget {
 
 class WidgetSample extends State<WidgetSamplePage> {
   var currentIndex = 0;
-  PageController controllerPageView;
+  PageController controllerPageView = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +28,7 @@ class WidgetSample extends State<WidgetSamplePage> {
         children: <Widget>[getFirstPage(), getSecondPage(), getThirdPage()],
         onPageChanged: _switchPage,
       ),
+      drawer: Text("测试"),
       bottomNavigationBar: _getBottomView(),
     );
   }
@@ -32,7 +36,6 @@ class WidgetSample extends State<WidgetSamplePage> {
   void _switchPage(int index) {
     setState(() {
       currentIndex = index;
-      print("测试");
       if (controllerPageView.page.toInt() != currentIndex) {
         controllerPageView.jumpToPage(currentIndex);
       }
@@ -49,15 +52,9 @@ class WidgetSample extends State<WidgetSamplePage> {
         onTap: _switchPage,
       );
 
-  Widget getFirstPage() => Stack(
-        children: <Widget>[Text(widget.title[0])],
-      );
+  Widget getFirstPage() => FirstPage();
 
-  Widget getSecondPage() => Stack(
-        children: <Widget>[Text(widget.title[1])],
-      );
+  Widget getSecondPage() => SecondPage();
 
-  Widget getThirdPage() => Stack(
-        children: <Widget>[Text(widget.title[2])],
-      );
+  Widget getThirdPage() => ThirdPage();
 }
