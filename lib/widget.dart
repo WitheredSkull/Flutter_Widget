@@ -20,6 +20,7 @@ class WidgetSample extends State<WidgetSamplePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.lightBlue,
         title: Text(widget.title[0]),
         centerTitle: true,
       ),

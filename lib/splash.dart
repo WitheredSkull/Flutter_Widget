@@ -1,17 +1,24 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class Splash extends StatelessWidget {
   final title = "启动页";
   var context;
+  Timer _timer;
 
   @override
   Widget build(BuildContext context) {
     this.context = context;
+    this._timer = Timer(Duration(seconds: 1), (){
+        Navigator.pop(this.context);
+    });
     return MaterialApp(
       title: title,
       home: _getHome(),
     );
   }
+
 
   _getHome() =>
       Scaffold(

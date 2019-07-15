@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_widget/view/list/InfiniteListPage.dart';
 
 class FirstPage extends StatefulWidget {
   @override
@@ -14,24 +15,51 @@ class FirstState extends State<FirstPage> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemBuilder: (context, index) {
-      if (index >= list.length) {
-        list.add(getNewData());
-      }
-      return InkWell(
-        child: GestureDetector(
-          onTap: () {
-            print("点击");
-          },
-          child: Container(
-            padding: EdgeInsets.all(20),
-            decoration: BoxDecoration(border: Border.all(color: Colors.black)),
-            child: Text(getNewData()),
-          ),
-        ),
-      );
-    });
+    return Column(
+      children: <Widget>[
+        _getItem(
+            text: "ListView无限循环",
+            onTap: () {
+              _startInfiniteListPage();
+            }),
+      ],
+    );
   }
+
+  _getItem({String text, GestureTapCallback onTap}) {
+    return InkWell(
+          splashColor: Colors.lightBlue.withOpacity(0.3),
+          highlightColor: Colors.lightBlue,
+          onTap: onTap,
+          child: Stack(
+            children: <Widget>[
+              Container(
+                height: 52,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(6)),
+                    color: Colors.lightBlue.withOpacity(0.3)),
+              ),
+              Container(
+                height: 44,
+                alignment: Alignment.bottomLeft,
+                color: Colors.lightBlue,
+                padding:
+                    EdgeInsets.only(top: 10, bottom: 10, left: 15, right: 15),
+                child: Text(
+                  text,
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ],
+          ),
+    )
+        ;
+  }
+
+  _startInfiniteListPage() =>
+      Navigator.push(context, MaterialPageRoute(builder: (context) {
+        return InfiniteListPage();
+      }));
 
   getNewData() => "随机数${Random().nextInt(100)}";
 }
