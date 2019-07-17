@@ -3,7 +3,6 @@ import 'package:flutter_widget/view/base/BaseState.dart';
 
 class LoginPage extends StatefulWidget {
   final _title = "登录";
-  var isFill = false;
 
   @override
   State<StatefulWidget> createState() {
@@ -13,6 +12,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class LoginState extends BaseState<LoginPage> {
+  var isFill = false;
   var _account, password;
   var _key = GlobalKey<FormState>();
   var accountController = TextEditingController();
@@ -32,7 +32,7 @@ class LoginState extends BaseState<LoginPage> {
       heightFactor: 500,
       child: Form(
           onChanged: () {
-            widget.isFill =
+            isFill =
             !(accountController.text.isEmpty || pwdController.text.isEmpty);
             setState(() {
               
@@ -144,5 +144,5 @@ class LoginState extends BaseState<LoginPage> {
     );
   }
 
-  _getSubmitWidgetColor() => widget.isFill ? Colors.white : Colors.grey.withOpacity(0.7);
+  _getSubmitWidgetColor() => isFill ? Colors.white : Colors.grey.withOpacity(0.7);
 }
