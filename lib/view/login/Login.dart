@@ -13,7 +13,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class LoginState extends BaseState<LoginPage> {
-  var _account, password;
+  var _account, _password;
   var _key = GlobalKey<FormState>();
   var accountController = TextEditingController();
   var pwdController = TextEditingController();
@@ -33,10 +33,8 @@ class LoginState extends BaseState<LoginPage> {
       child: Form(
           onChanged: () {
             widget.isFill =
-            !(accountController.text.isEmpty || pwdController.text.isEmpty);
-            setState(() {
-              
-            });
+                !(accountController.text.isEmpty || pwdController.text.isEmpty);
+            setState(() {});
           },
           key: _key,
           child: Column(
@@ -104,10 +102,13 @@ class LoginState extends BaseState<LoginPage> {
                     labelText: "密码",
                     labelStyle: TextStyle(color: Colors.lightBlue)),
                 validator: (text) {
-                    return "";
+                  return "";
                 },
                 onSaved: (text) {
-                  _account = text;
+                  _password = text;
+                  setState(() {
+
+                  });
                 },
                 onEditingComplete: () {
                   print("onEditingComplete");
@@ -129,9 +130,9 @@ class LoginState extends BaseState<LoginPage> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(60)),
                   onPressed: () {
-                    if(accountController.text.length == 11){
+                    if (accountController.text.length == 11) {
                       _key.currentState.save();
-                    }else{
+                    } else {
                       _key.currentState.validate();
                     }
                   },
@@ -139,10 +140,25 @@ class LoginState extends BaseState<LoginPage> {
                   child: Text("登录"),
                 ),
               ),
+              SizedBox(
+                height: 30,
+              ),
+              Flexible(
+                  child: Container(
+                alignment: Alignment.center,
+                padding: EdgeInsets.all(8),
+                width: 200,
+                height: 50,
+                decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.3),
+                    borderRadius: BorderRadius.circular(60)),
+                child: Text("输入的账号：$_account 密码：$_password"),
+              ))
             ],
           )),
     );
   }
 
-  _getSubmitWidgetColor() => widget.isFill ? Colors.white : Colors.grey.withOpacity(0.7);
+  _getSubmitWidgetColor() =>
+      widget.isFill ? Colors.white : Colors.grey.withOpacity(0.7);
 }
