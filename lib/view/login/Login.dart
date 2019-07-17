@@ -102,6 +102,7 @@ class LoginState extends BaseState<LoginPage> {
                     labelText: "密码",
                     labelStyle: TextStyle(color: Colors.lightBlue)),
                 validator: (text) {
+                  
                   return "";
                 },
                 onSaved: (text) {
