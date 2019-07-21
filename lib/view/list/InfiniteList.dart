@@ -47,9 +47,7 @@ class InfiniteListState extends BaseState<InfiniteListPage> {
   @override
   Widget initScaffoldBody() {
     return InkWell(
-      onTap: (){
-
-      },
+      onTap: () {},
       splashColor: Colors.greenAccent,
       highlightColor: Colors.lightBlue,
       child: RefreshIndicator(

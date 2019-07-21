@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AssetsColor {
+  ///主题色
+  static final Color COLOR_PRIMARY = Colors.lightBlue;
   static final Color COLOR_TITLE_TEXT = Colors.black.withOpacity(0.7);
   static final Color COLOR_SUBTITLE_TEXT = Colors.grey.withOpacity(0.9);
   static final Color COLOR_CONTENT_TEXT = Colors.black.withOpacity(0.7);

@@ -49,6 +49,7 @@ flutter:
     - assets/images/icon/ic_decode_primary.png
     - assets/images/icon/ic_advance.png
     - assets/images/icon/ic_advance_primary.png
+    - assets/images/icon/ic_code.png
     #  - images/a_dot_burr.jpeg
     #  - images/a_dot_ham.jpeg
 

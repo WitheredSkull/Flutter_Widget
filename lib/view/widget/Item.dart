@@ -16,7 +16,8 @@ class ItemView extends StatelessWidget {
     this.subtitle,
     this.leading,
     this.trailing,
-    this.contentPadding = const EdgeInsets.all(0),
+    this.contentPadding =
+        const EdgeInsets.only(left: 14, top: 0, bottom: 0, right: 14),
     this.enabled = true,
     this.onTap,
     this.selected = false,
@@ -58,6 +59,5 @@ class ItemView extends StatelessWidget {
       //长按事件
       selected: selected, //是否选中（选中字体会变成主题色）
     );
-    ;
   }
 }

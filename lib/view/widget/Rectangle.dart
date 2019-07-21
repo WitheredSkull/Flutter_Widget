@@ -23,11 +23,13 @@ class RectangleContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: margin,
-      padding: padding,
       color: backgroundColor,
-      child: ListView(
-        shrinkWrap: true,
-        children: _getChildren(context),
+      child: Material(
+        color: backgroundColor,
+        child: ListView(
+          shrinkWrap: true,
+          children: _getChildren(context),
+        ),
       ),
     );
   }
@@ -41,7 +43,10 @@ class RectangleContainer extends StatelessWidget {
     if (!(titleWidget != null && children[0] != titleWidget)) {
       titleWidget = Padding(
         padding: EdgeInsets.only(
-            top: 10, bottom: (subtitle != null && subtitle.isNotEmpty)?0:10),
+            top: 10,
+            bottom: (subtitle != null && subtitle.isNotEmpty) ? 0 : 10,
+            left: 14,
+            right: 14),
         child: Text(
           title,
           style: TextStyle(
@@ -53,7 +58,7 @@ class RectangleContainer extends StatelessWidget {
       );
       if (subtitle != null && subtitle.isNotEmpty) {
         subtitleWidget = Padding(
-          padding: const EdgeInsets.only(bottom: 6),
+          padding: const EdgeInsets.only(bottom: 6, left: 14, right: 14),
           child: Text(
             subtitle,
             style: Theme.of(context).textTheme.subtitle,
