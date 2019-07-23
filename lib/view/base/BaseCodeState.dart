@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
 
 abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
+
   ///跳转的链接
   String path;
 
@@ -21,12 +22,16 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text(title() != null ? title() : ""),
         backgroundColor: APP.AssetsColor.COLOR_PRIMARY,
         actions: _getAppbarActions(),
       ),
       body: body(),
     );
   }
+
+  ///标题
+  String title();
 
   Widget body();
 
@@ -44,13 +49,14 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
           child: Container(
             margin: EdgeInsets.only(right: 14),
             child: Image.asset(
-            "assets/images/icon/ic_code.png",
-            width: APP.AssetsSize.SIZE_ICON,
-            height: APP.AssetsSize.SIZE_ICON,
-          ),),
+              "assets/images/icon/ic_code.png",
+              width: APP.AssetsSize.SIZE_ICON,
+              height: APP.AssetsSize.SIZE_ICON,
+            ),
+          ),
         )
       ];
-    }else{
+    } else {
       return List<Widget>();
     }
   }

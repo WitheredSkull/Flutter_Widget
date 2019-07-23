@@ -22,7 +22,7 @@ class HomeState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
-        title: Text(widget.title[0]),
+        title: Text(widget.title[currentIndex]),
         centerTitle: true,
       ),
       body: PageView(

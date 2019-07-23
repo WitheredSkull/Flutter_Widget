@@ -10,6 +10,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
+          scaffoldBackgroundColor: APP.AssetsColor.COLOR_BACKGROUND,
           textSelectionColor: Colors.lightBlue,
           textSelectionHandleColor: Colors.black.withOpacity(0.7),
           textTheme: TextTheme(
