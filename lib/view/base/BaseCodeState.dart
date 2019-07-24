@@ -20,13 +20,16 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
 
   @override
   Widget build(BuildContext context) {
+    var appbar = AppBar(
+      title: Text(title() != null ? title() : ""),
+      backgroundColor: APP.AssetsColor.COLOR_PRIMARY,
+      actions: _getAppbarActions(),
+    );
+    var content = body();
+    initData();
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title() != null ? title() : ""),
-        backgroundColor: APP.AssetsColor.COLOR_PRIMARY,
-        actions: _getAppbarActions(),
-      ),
-      body: body(),
+      appBar: appbar,
+      body: content,
     );
   }
 
@@ -34,6 +37,8 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
   String title();
 
   Widget body();
+
+  void initData();
 
   enableCode(bool enable) {
     setState(() {
