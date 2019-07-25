@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/presenter/BasicsPresenter.dart';
 import 'package:flutter_widget/view/container/Layout.dart';
+import 'package:flutter_widget/view/container/Layout2.dart';
+import 'package:flutter_widget/view/container/Layout3.dart';
 import 'package:flutter_widget/view/list/InfiniteList.dart';
 import 'package:flutter_widget/view/widget/Item.dart';
 import 'package:flutter_widget/view/widget/Rectangle.dart';
@@ -52,7 +54,7 @@ class BasicsState extends State<BasicsPage> {
               presenter.itemData[1].subtitle,
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (setting) {
-                  return LayoutPage(
+                  return Layout2Page(
                     presenter.itemData[1],
                   );
                 }));
@@ -65,7 +67,7 @@ class BasicsState extends State<BasicsPage> {
               presenter.itemData[2].subtitle,
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (setting) {
-                  return LayoutPage(
+                  return Layout3Page(
                     presenter.itemData[2],
                   );
                 }));

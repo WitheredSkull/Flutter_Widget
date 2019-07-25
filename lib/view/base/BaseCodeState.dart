@@ -10,12 +10,12 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
   String copeContent;
 
   ///是否需要跳转功能
-  bool isEnableCode = false;
+  bool isEnableCode;
 
   BaseCodeState({
     this.path,
     this.copeContent,
-    this.isEnableCode,
+    this.isEnableCode = false,
   });
 
   @override

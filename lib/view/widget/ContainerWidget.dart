@@ -19,7 +19,7 @@ class ContainerWidget extends StatelessWidget {
       height: 150,
 
       ///设置边缘同其他Widget的边距
-      margin: EdgeInsets.only(top: 14),
+      margin: EdgeInsets.all(0),
 
       ///变换（可以随意对你的Container进行4D矩阵变换操作，类似PS的变换效果，下面代码的效果是延X轴倾斜0.1弧度）
 //      transform: Matrix4.skewX(0.1),

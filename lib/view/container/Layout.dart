@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/view/base/BaseCodeState.dart';
 import 'package:flutter_widget/view/widget/AlignWidget.dart';
+import 'package:flutter_widget/view/widget/AspectRatioWidget.dart';
 import 'package:flutter_widget/view/widget/CenterWidget.dart';
 import 'package:flutter_widget/view/widget/ContainerWidget.dart';
 import 'package:flutter_widget/view/widget/Explan.dart';
 import 'package:flutter_widget/model/bean/ItemViewExplainBean.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
+import 'package:flutter_widget/view/widget/FittedBoxWidget.dart';
+import 'package:flutter_widget/view/widget/ItemName.dart';
 import 'package:flutter_widget/view/widget/PaddingWidget.dart';
 
 class LayoutPage extends StatefulWidget {
@@ -41,37 +44,50 @@ class LayoutState extends BaseCodeState<LayoutPage> {
               Text(widget.data.explain)
             ],
           ),
-          SizedBox(
-            height: 16,
-          ),
+          ItemName("Container"),
           ContainerWidget(),
-          SizedBox(
-            height: 16,
-          ),
+          ItemName("Padding"),
           Container(
             child: PaddingWidget(),
             decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(color: Colors.black.withOpacity(0.3))),
           ),
-          SizedBox(
-            height: 16,
-          ),
+          ItemName("Center"),
           Container(
             child: CenterWidget(),
             decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(color: Colors.black.withOpacity(0.3))),
           ),
-          SizedBox(
-            height: 16,
-          ),
+          ItemName("Align"),
           Container(
             child: AlignWidget(),
             decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(color: Colors.black.withOpacity(0.3))),
           ),
+          ItemName("FittedBox"),
+          Container(
+            width: 200,
+            height: 150,
+            child: FittedBoxWidget(),
+            decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(color: Colors.black.withOpacity(0.3))),
+          ),
+          ItemName("AspectRatio"),
+          Container(
+            width: 100,
+            child: Align(
+              alignment: Alignment.center,
+              child: AspectRatioWidget(),
+            ),
+            decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(color: Colors.black.withOpacity(0.3))),
+          ),
+          SizedBox(height: 48,)
         ],
       ),
     );

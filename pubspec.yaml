@@ -42,6 +42,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/images/icon/flutter_widget.png
     - assets/images/icon/ic_baidu.png
     - assets/images/icon/ic_basics.png
     - assets/images/icon/ic_basics_primary.png

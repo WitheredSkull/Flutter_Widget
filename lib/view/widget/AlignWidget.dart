@@ -6,11 +6,11 @@ class AlignWidget extends StatelessWidget{
   Widget build(BuildContext context) {
     return Align(
       ///子部件
-      child: Text("Align"),
+      child: Text("Alignment.topLeft(文字对齐顶部左边)\nwidthFactor: 1.5(宽是文字的1.5倍)\nheightFactor: 3.0(高是文字三倍)"),
       ///对齐方式
-      alignment: Alignment.topCenter,
+      alignment: Alignment.topLeft,
       ///宽度缩放因子,当前2.0表示实际内容宽度的两倍,3.0就是3倍
-      widthFactor: 2.0,
+      widthFactor: 1.5,
       ///高度缩放因子
       heightFactor: 3.0,
     );
