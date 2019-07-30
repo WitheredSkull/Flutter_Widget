@@ -26,8 +26,8 @@ class RectangleContainer extends StatelessWidget {
       color: backgroundColor,
       child: Material(
         color: backgroundColor,
-        child: ListView(
-          shrinkWrap: true,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: _getChildren(context),
         ),
       ),

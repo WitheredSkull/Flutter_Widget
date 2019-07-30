@@ -36,6 +36,7 @@ class ItemView extends StatelessWidget {
       leading: null,
       //前面的ICON
       title: Row(
+        mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
           Text(
@@ -43,10 +44,14 @@ class ItemView extends StatelessWidget {
             style: Theme.of(context).textTheme.title,
           ),
           if (beHindText != null)
-            Text(
+            Expanded(
+                child: Text(
               beHindText,
+              overflow: TextOverflow.fade,
+              softWrap: false,
+              maxLines: 1,
               style: Theme.of(context).textTheme.subtitle,
-            ),
+            )),
         ],
       ),
       //标题

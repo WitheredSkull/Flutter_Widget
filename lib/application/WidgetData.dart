@@ -1,4 +1,4 @@
-var LAYOUT = [
+var LAYOUT_SINGLE = [
   "Container",
   "Padding",
   "Center",
@@ -17,4 +17,19 @@ var LAYOUT = [
   "SizedOverflowBox",
   "Transform",
   "CustomSingleChildLayout"
+];
+var LAYOUT_MULTI = [
+  "Column",
+  "Row",
+  "Expanded",
+  "Wrap",
+  "Flow",
+  "ListBody",
+  "ListView",
+  "GridView",
+  "Stack",
+  "Table",
+  "IndexedStack",
+  "LayoutBuilder",
+  "CustomMultiChildLayout",
 ];

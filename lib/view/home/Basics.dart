@@ -2,12 +2,16 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/presenter/BasicsPresenter.dart';
-import 'package:flutter_widget/view/container/Layout.dart';
-import 'package:flutter_widget/view/container/Layout2.dart';
-import 'package:flutter_widget/view/container/Layout3.dart';
+import 'package:flutter_widget/view/container/MultiLayout.dart';
+import 'package:flutter_widget/view/container/MultiLayout2.dart';
+import 'package:flutter_widget/view/container/MultiLayout3.dart';
+import 'package:flutter_widget/view/container/SingleLayout.dart';
+import 'package:flutter_widget/view/container/SingleLayout2.dart';
+import 'package:flutter_widget/view/container/SingleLayout3.dart';
 import 'package:flutter_widget/view/list/InfiniteList.dart';
 import 'package:flutter_widget/view/widget/Item.dart';
 import 'package:flutter_widget/view/widget/Rectangle.dart';
+import 'package:flutter_widget/application/app.dart' as APP;
 
 class BasicsPage extends StatefulWidget {
   @override
@@ -28,62 +32,104 @@ class BasicsState extends State<BasicsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        RectangleContainer(
-          "视图容器",
-          subtitle: "View the container",
-          children: <Widget>[
-            ItemView(
-              presenter.itemData[0].title,
-              beHindText: presenter.itemData[0].behindTitle,
-              subtitle:
-              presenter.itemData[0].subtitle,
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (setting) {
-                  return LayoutPage(
-                    presenter.itemData[0],
-                  );
-                }));
-              },
-            ),
-            ItemView(
-              presenter.itemData[1].title,
-              beHindText: presenter.itemData[1].behindTitle,
-              subtitle:
-              presenter.itemData[1].subtitle,
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (setting) {
-                  return Layout2Page(
-                    presenter.itemData[1],
-                  );
-                }));
-              },
-            ),
-            ItemView(
-              presenter.itemData[2].title,
-              beHindText: presenter.itemData[2].behindTitle,
-              subtitle:
-              presenter.itemData[2].subtitle,
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (setting) {
-                  return Layout3Page(
-                    presenter.itemData[2],
-                  );
-                }));
-              },
-            ),
-          ],
-        ),
-        RectangleContainer(
-          "一个无限列表",
-          children: <Widget>[
-            ItemView("ListView无限循环", subtitle: "测试", onTap: () {
-              _startInfiniteListPage();
-            }),
-          ],
-        )
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          RectangleContainer(
+            "视图容器(单部件)",
+            subtitle: "View the container(single child)",
+            children: <Widget>[
+              ItemView(
+                presenter.singleLayoutData[0].title,
+                beHindText: presenter.singleLayoutData[0].behindTitle,
+                subtitle: presenter.singleLayoutData[0].subtitle,
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                    return LayoutPage(
+                      presenter.singleLayoutData[0],
+                    );
+                  }));
+                },
+              ),
+              ItemView(
+                presenter.singleLayoutData[1].title,
+                beHindText: presenter.singleLayoutData[1].behindTitle,
+                subtitle: presenter.singleLayoutData[1].subtitle,
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                    return Layout2Page(
+                      presenter.singleLayoutData[1],
+                    );
+                  }));
+                },
+              ),
+              ItemView(
+                presenter.singleLayoutData[2].title,
+                beHindText: presenter.singleLayoutData[2].behindTitle,
+                subtitle: presenter.singleLayoutData[2].subtitle,
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                    return Layout3Page(
+                      presenter.singleLayoutData[2],
+                    );
+                  }));
+                },
+              ),
+            ],
+          ),
+          RectangleContainer("视图容器(多部件)",
+              subtitle: "View the container(multi child)",
+              children: <Widget>[
+                ItemView(
+                  presenter.multiLayoutData[0].title,
+                  beHindText: presenter.multiLayoutData[0].behindTitle,
+                  subtitle: presenter.multiLayoutData[0].subtitle,
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (setting) {
+                      return MultiLayout(
+                        presenter.multiLayoutData[0],
+                      );
+                    }));
+                  },
+                ),
+                ItemView(
+                  presenter.multiLayoutData[1].title,
+                  beHindText: presenter.multiLayoutData[1].behindTitle,
+                  subtitle: presenter.multiLayoutData[1].subtitle,
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (setting) {
+                      return Multi2Layout(
+                        presenter.multiLayoutData[1],
+                      );
+                    }));
+                  },
+                ),
+                ItemView(
+                  presenter.multiLayoutData[2].title,
+                  beHindText: presenter.multiLayoutData[2].behindTitle,
+                  subtitle: presenter.multiLayoutData[2].subtitle,
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (setting) {
+                      return Multi3Layout(
+                        presenter.multiLayoutData[2],
+                      );
+                    }));
+                  },
+                ),
+              ]),
+          RectangleContainer(
+            "一个无限列表",
+            children: <Widget>[
+              ItemView("ListView无限循环", subtitle: "测试", onTap: () {
+                _startInfiniteListPage();
+              }),
+            ],
+          )
+        ],
+      ),
     );
   }
 
