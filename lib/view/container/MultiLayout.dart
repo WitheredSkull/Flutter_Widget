@@ -68,7 +68,9 @@ class LayoutState extends BaseCodeState<MultiLayout> {
           ),
           ItemName("Wrap"),
           WrapWidget(),
-          SizedBox(height: 48,)
+          SizedBox(
+            height: 48,
+          )
         ],
       ),
     );
