@@ -1,6 +1,6 @@
 import 'package:flutter_widget/model/bean/ItemViewExplainBean.dart';
 
-import 'package:flutter_widget/application/WidgetData.dart' as WidgetData;
+import 'package:flutter_widget/model/data/WidgetData.dart' as WidgetData;
 
 class BasicsPresenter {
   int singleLayoutWeight;
