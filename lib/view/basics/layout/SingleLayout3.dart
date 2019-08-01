@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/model/bean/ItemViewExplainBean.dart';
 import 'package:flutter_widget/view/base/BaseCodeState.dart';
-import 'package:flutter_widget/view/widget/CustomSingleChildLayoutWidget.dart';
-import 'package:flutter_widget/view/widget/Explan.dart';
+import 'package:flutter_widget/view/widget/layout/CustomSingleChildLayoutWidget.dart';
+import 'package:flutter_widget/view/widget/custom/Explan.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
-import 'package:flutter_widget/view/widget/ItemName.dart';
-import 'package:flutter_widget/view/widget/OffstageWidget.dart';
-import 'package:flutter_widget/view/widget/OverflowBox.dart';
-import 'package:flutter_widget/view/widget/SizedBoxWidget.dart';
-import 'package:flutter_widget/view/widget/SizedOverflowBoxWidget.dart';
-import 'package:flutter_widget/view/widget/TransformWidget.dart';
+import 'package:flutter_widget/view/widget/custom/ItemName.dart';
+import 'package:flutter_widget/view/widget/layout/OffstageWidget.dart';
+import 'package:flutter_widget/view/widget/layout/OverflowBoxWidget.dart';
+import 'package:flutter_widget/view/widget/layout/SizedBoxWidget.dart';
+import 'package:flutter_widget/view/widget/layout/SizedOverflowBoxWidget.dart';
+import 'package:flutter_widget/view/widget/layout/TransformWidget.dart';
 
 class Layout3Page extends StatefulWidget {
   ItemViewExplainBean data;

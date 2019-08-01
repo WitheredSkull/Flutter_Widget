@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/view/base/BaseCodeState.dart';
-import 'package:flutter_widget/view/widget/AlignWidget.dart';
-import 'package:flutter_widget/view/widget/AspectRatioWidget.dart';
-import 'package:flutter_widget/view/widget/CenterWidget.dart';
-import 'package:flutter_widget/view/widget/ContainerWidget.dart';
-import 'package:flutter_widget/view/widget/Explan.dart';
+import 'package:flutter_widget/view/widget/layout/AlignWidget.dart';
+import 'package:flutter_widget/view/widget/layout/AspectRatioWidget.dart';
+import 'package:flutter_widget/view/widget/layout/CenterWidget.dart';
+import 'package:flutter_widget/view/widget/layout/ContainerWidget.dart';
+import 'package:flutter_widget/view/widget/custom/Explan.dart';
 import 'package:flutter_widget/model/bean/ItemViewExplainBean.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
-import 'package:flutter_widget/view/widget/FittedBoxWidget.dart';
-import 'package:flutter_widget/view/widget/ItemName.dart';
-import 'package:flutter_widget/view/widget/PaddingWidget.dart';
+import 'package:flutter_widget/view/widget/layout/FittedBoxWidget.dart';
+import 'package:flutter_widget/view/widget/custom/ItemName.dart';
+import 'package:flutter_widget/view/widget/layout/PaddingWidget.dart';
 
 class LayoutPage extends StatefulWidget {
   ItemViewExplainBean data;

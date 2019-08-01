@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/model/bean/ItemViewExplainBean.dart';
 import 'package:flutter_widget/view/base/BaseCodeState.dart';
-import 'package:flutter_widget/view/widget/CustomMultiChildLayoutWidget.dart';
-import 'package:flutter_widget/view/widget/Explan.dart';
+import 'package:flutter_widget/view/widget/layout/CustomMultiChildLayoutWidget.dart';
+import 'package:flutter_widget/view/widget/custom/Explan.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
-import 'package:flutter_widget/view/widget/IndexedStackWidget.dart';
-import 'package:flutter_widget/view/widget/ItemName.dart';
-import 'package:flutter_widget/view/widget/LayoutBuilderWidget.dart';
-import 'package:flutter_widget/view/widget/StackWidget.dart';
-import 'package:flutter_widget/view/widget/TableWidget.dart';
+import 'package:flutter_widget/view/widget/layout/IndexedStackWidget.dart';
+import 'package:flutter_widget/view/widget/custom/ItemName.dart';
+import 'package:flutter_widget/view/widget/layout/LayoutBuilderWidget.dart';
+import 'package:flutter_widget/view/widget/layout/StackWidget.dart';
+import 'package:flutter_widget/view/widget/layout/TableWidget.dart';
 
 class Multi3Layout extends StatefulWidget {
   ItemViewExplainBean data;

@@ -76,10 +76,73 @@ var AssetsImagesIcons = [
   "RawImage",
 ];
 
+
+///Display and style text.
+var Text = [
+  "DefaultTextStyle",
+  "RichText",
+  "Text",
+];
+
+///Take user input in addition to input widgets in Material Components and Cupertino.
+var Input = [
+  "Form",
+  "FormField",
+  "RawKeyboardListener",
+];
+
 ///Async patterns to your Flutter application.
 var Async = [
   "FutureBuilder",
   "StreamBuilder",
+];
+
+///Respond to touch events and route users to different views.
+var InteractionModels = [
+  "AbsorbPointer",
+  "Dismissible",
+  "DragTarget",
+  "Draggable",
+  "GestureDetector",
+  "IgnorePointer",
+  "LongPressDraggable",
+  "Scrollable",
+];
+
+///These widgets apply visual effects to the children without changing their layout, size, or position.
+var PaintingAndEffects = [
+  "BackdropFilter",
+  "ClipOval",
+  "ClipPath",
+  "ClipRect",
+  "CustomPaint",
+  "DecoratedBox",
+  "FractionalTranslation",
+  "Opacity",
+  "RotatedBox",
+  "Transform",
+];
+
+///Scroll multiple widgets as children of the parent.
+var Scrolling = [
+  "CustomScrollView",
+  "GridView",
+  "ListView",
+  "NestedScrollView",
+  "NotificationListener",
+  "PageView",
+  "RefreshIndicator",
+  "ScrollConfiguration",
+  "Scrollable",
+  "Scrollbar",
+  "SingleChildScrollView",
+];
+
+///Manage the theme of your app, makes your app responsive to screen sizes, or add padding.
+var Styling = [
+  "MediaQuery",
+  "Padding",
+  "Theme",
 ];
 
 ///Widgets you absolutely need to know before building your first Flutter app.
@@ -121,25 +184,6 @@ var Cupertino = [
   "CupertinoTabView",
   "CupertinoTextField",
   "CupertinoTimerPicker",
-];
-
-///Take user input in addition to input widgets in Material Components and Cupertino.
-var Input = [
-  "Form",
-  "FormField",
-  "RawKeyboardListener",
-];
-
-///Respond to touch events and route users to different views.
-var InteractionModels = [
-  "AbsorbPointer",
-  "Dismissible",
-  "DragTarget",
-  "Draggable",
-  "GestureDetector",
-  "IgnorePointer",
-  "LongPressDraggable",
-  "Scrollable",
 ];
 
 ///Visual, behavioral, and motion-rich widgets implementing the Material Design guidelines.
@@ -194,47 +238,4 @@ var MaterialComponentLayout = [
   "Divider",
   "ListTile",
   "Stepper",
-];
-
-///These widgets apply visual effects to the children without changing their layout, size, or position.
-var PaintingAndEffects = [
-  "BackdropFilter",
-  "ClipOval",
-  "ClipPath",
-  "ClipRect",
-  "CustomPaint",
-  "DecoratedBox",
-  "FractionalTranslation",
-  "Opacity",
-  "RotatedBox",
-  "Transform",
-];
-
-///Scroll multiple widgets as children of the parent.
-var Scrolling = [
-  "CustomScrollView",
-  "GridView",
-  "ListView",
-  "NestedScrollView",
-  "NotificationListener",
-  "PageView",
-  "RefreshIndicator",
-  "ScrollConfiguration",
-  "Scrollable",
-  "Scrollbar",
-  "SingleChildScrollView",
-];
-
-///Manage the theme of your app, makes your app responsive to screen sizes, or add padding.
-var Styling = [
-  "MediaQuery",
-  "Padding",
-  "Theme",
-];
-
-///Display and style text.
-var Text = [
-  "DefaultTextStyle",
-  "RichText",
-  "Text",
 ];

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/model/bean/ItemViewExplainBean.dart';
 import 'package:flutter_widget/view/base/BaseCodeState.dart';
-import 'package:flutter_widget/view/widget/BaseLineWidget.dart';
-import 'package:flutter_widget/view/widget/ConstrainedBoxWidget.dart';
-import 'package:flutter_widget/view/widget/Explan.dart';
+import 'package:flutter_widget/view/widget/layout/BaseLineWidget.dart';
+import 'package:flutter_widget/view/widget/layout/ConstrainedBoxWidget.dart';
+import 'package:flutter_widget/view/widget/custom/Explan.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
-import 'package:flutter_widget/view/widget/FractionallySizedBoxWidget.dart';
-import 'package:flutter_widget/view/widget/IntrinsicHeightWidget.dart';
-import 'package:flutter_widget/view/widget/IntrinsicWidthWidget.dart';
-import 'package:flutter_widget/view/widget/ItemName.dart';
-import 'package:flutter_widget/view/widget/LimitedBoxWidget.dart';
+import 'package:flutter_widget/view/widget/layout/FractionallySizedBoxWidget.dart';
+import 'package:flutter_widget/view/widget/layout/IntrinsicHeightWidget.dart';
+import 'package:flutter_widget/view/widget/layout/IntrinsicWidthWidget.dart';
+import 'package:flutter_widget/view/widget/custom/ItemName.dart';
+import 'package:flutter_widget/view/widget/layout/LimitedBoxWidget.dart';
 
 class Layout2Page extends StatefulWidget {
   ItemViewExplainBean data;

@@ -44,6 +44,8 @@ class ItemView extends StatelessWidget {
             style: Theme.of(context).textTheme.title,
           ),
           if (beHindText != null)
+            SizedBox(width: 8,),
+          if (beHindText != null)
             Expanded(
                 child: Text(
               beHindText,

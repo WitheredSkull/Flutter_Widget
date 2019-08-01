@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class OverflowBoxWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    ///支持移除父部件
+    ///支持溢出父部件
     ///A widget that imposes different constraints on its child than it gets from its parent, possibly allowing the child to overflow the parent.
     return OverflowBox(
       ///设置部分溢出的反方向（如果是top则会往bottom方向溢出，如果是bottom则会往top方向溢出，center则是往上下左右一起溢出）

@@ -2,15 +2,16 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/presenter/BasicsPresenter.dart';
-import 'package:flutter_widget/view/container/MultiLayout.dart';
-import 'package:flutter_widget/view/container/MultiLayout2.dart';
-import 'package:flutter_widget/view/container/MultiLayout3.dart';
-import 'package:flutter_widget/view/container/SingleLayout.dart';
-import 'package:flutter_widget/view/container/SingleLayout2.dart';
-import 'package:flutter_widget/view/container/SingleLayout3.dart';
+import 'package:flutter_widget/view/basics/accessibility/Accessibility.dart';
+import 'package:flutter_widget/view/basics/layout/MultiLayout.dart';
+import 'package:flutter_widget/view/basics/layout/MultiLayout2.dart';
+import 'package:flutter_widget/view/basics/layout/MultiLayout3.dart';
+import 'package:flutter_widget/view/basics/layout/SingleLayout.dart';
+import 'package:flutter_widget/view/basics/layout/SingleLayout2.dart';
+import 'package:flutter_widget/view/basics/layout/SingleLayout3.dart';
 import 'package:flutter_widget/view/list/InfiniteList.dart';
-import 'package:flutter_widget/view/widget/Item.dart';
-import 'package:flutter_widget/view/widget/Rectangle.dart';
+import 'package:flutter_widget/view/widget/custom/Item.dart';
+import 'package:flutter_widget/view/widget/custom/Rectangle.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
 
 class BasicsPage extends StatefulWidget {
@@ -34,101 +35,7 @@ class BasicsState extends State<BasicsPage> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        children: <Widget>[
-          RectangleContainer(
-            "视图容器(单部件)",
-            subtitle: "View the container(single child)",
-            children: <Widget>[
-              ItemView(
-                presenter.singleLayoutData[0].title,
-                beHindText: presenter.singleLayoutData[0].behindTitle,
-                subtitle: presenter.singleLayoutData[0].subtitle,
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (setting) {
-                    return LayoutPage(
-                      presenter.singleLayoutData[0],
-                    );
-                  }));
-                },
-              ),
-              ItemView(
-                presenter.singleLayoutData[1].title,
-                beHindText: presenter.singleLayoutData[1].behindTitle,
-                subtitle: presenter.singleLayoutData[1].subtitle,
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (setting) {
-                    return Layout2Page(
-                      presenter.singleLayoutData[1],
-                    );
-                  }));
-                },
-              ),
-              ItemView(
-                presenter.singleLayoutData[2].title,
-                beHindText: presenter.singleLayoutData[2].behindTitle,
-                subtitle: presenter.singleLayoutData[2].subtitle,
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (setting) {
-                    return Layout3Page(
-                      presenter.singleLayoutData[2],
-                    );
-                  }));
-                },
-              ),
-            ],
-          ),
-          RectangleContainer("视图容器(多部件)",
-              subtitle: "View the container(multi child)",
-              children: <Widget>[
-                ItemView(
-                  presenter.multiLayoutData[0].title,
-                  beHindText: presenter.multiLayoutData[0].behindTitle,
-                  subtitle: presenter.multiLayoutData[0].subtitle,
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (setting) {
-                      return MultiLayout(
-                        presenter.multiLayoutData[0],
-                      );
-                    }));
-                  },
-                ),
-                ItemView(
-                  presenter.multiLayoutData[1].title,
-                  beHindText: presenter.multiLayoutData[1].behindTitle,
-                  subtitle: presenter.multiLayoutData[1].subtitle,
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (setting) {
-                      return Multi2Layout(
-                        presenter.multiLayoutData[1],
-                      );
-                    }));
-                  },
-                ),
-                ItemView(
-                  presenter.multiLayoutData[2].title,
-                  beHindText: presenter.multiLayoutData[2].behindTitle,
-                  subtitle: presenter.multiLayoutData[2].subtitle,
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (setting) {
-                      return Multi3Layout(
-                        presenter.multiLayoutData[2],
-                      );
-                    }));
-                  },
-                ),
-              ]),
-          RectangleContainer(
-            "一个无限列表",
-            children: <Widget>[
-              ItemView("ListView无限循环", subtitle: "测试", onTap: () {
-                _startInfiniteListPage();
-              }),
-            ],
-          )
-        ],
+        children: <Widget>[...?_getLayout(), _getAccessibility()],
       ),
     );
   }
@@ -139,4 +46,120 @@ class BasicsState extends State<BasicsPage> {
       }));
 
   getNewData() => "随机数${Random().nextInt(100)}";
+
+  List<Widget> _getLayout() {
+    return <Widget>[
+      RectangleContainer(
+        "视图容器(单部件)",
+        subtitle: "View the container(single child)",
+        children: <Widget>[
+          ItemView(
+            presenter.singleLayoutData[0].title,
+            beHindText: presenter.singleLayoutData[0].behindTitle,
+            subtitle: presenter.singleLayoutData[0].subtitle,
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                return LayoutPage(
+                  presenter.singleLayoutData[0],
+                );
+              }));
+            },
+          ),
+          ItemView(
+            presenter.singleLayoutData[1].title,
+            beHindText: presenter.singleLayoutData[1].behindTitle,
+            subtitle: presenter.singleLayoutData[1].subtitle,
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                return Layout2Page(
+                  presenter.singleLayoutData[1],
+                );
+              }));
+            },
+          ),
+          ItemView(
+            presenter.singleLayoutData[2].title,
+            beHindText: presenter.singleLayoutData[2].behindTitle,
+            subtitle: presenter.singleLayoutData[2].subtitle,
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                return Layout3Page(
+                  presenter.singleLayoutData[2],
+                );
+              }));
+            },
+          ),
+        ],
+      ),
+      RectangleContainer("视图容器(多部件)",
+          subtitle: "View the container(multi child)",
+          children: <Widget>[
+            ItemView(
+              presenter.multiLayoutData[0].title,
+              beHindText: presenter.multiLayoutData[0].behindTitle,
+              subtitle: presenter.multiLayoutData[0].subtitle,
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                  return MultiLayout(
+                    presenter.multiLayoutData[0],
+                  );
+                }));
+              },
+            ),
+            ItemView(
+              presenter.multiLayoutData[1].title,
+              beHindText: presenter.multiLayoutData[1].behindTitle,
+              subtitle: presenter.multiLayoutData[1].subtitle,
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                  return Multi2Layout(
+                    presenter.multiLayoutData[1],
+                  );
+                }));
+              },
+            ),
+            ItemView(
+              presenter.multiLayoutData[2].title,
+              beHindText: presenter.multiLayoutData[2].behindTitle,
+              subtitle: presenter.multiLayoutData[2].subtitle,
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                  return Multi3Layout(
+                    presenter.multiLayoutData[2],
+                  );
+                }));
+              },
+            ),
+          ]),
+      RectangleContainer(
+        "一个无限列表",
+        children: <Widget>[
+          ItemView("ListView无限循环", subtitle: "测试", onTap: () {
+            _startInfiniteListPage();
+          }),
+        ],
+      )
+    ];
+  }
+
+  Widget _getAccessibility() {
+    return RectangleContainer(
+      "可访问性",
+      subtitle: presenter.accessibilityData[0].explain,
+      children: <Widget>[
+        ItemView(
+          presenter.accessibilityData[0].title,
+          beHindText: presenter.accessibilityData[0].behindTitle,
+          subtitle: presenter.accessibilityData[0].subtitle,
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (setting) {
+              return Accessibility(
+                presenter.accessibilityData[0],
+              );
+            }));
+          },
+        ),
+      ],
+    );
+  }
 }

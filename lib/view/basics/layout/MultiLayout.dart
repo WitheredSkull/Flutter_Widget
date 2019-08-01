@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/model/bean/ItemViewExplainBean.dart';
 import 'package:flutter_widget/view/base/BaseCodeState.dart';
-import 'package:flutter_widget/view/widget/ColumnWidget.dart';
-import 'package:flutter_widget/view/widget/ExpandedWidget.dart';
-import 'package:flutter_widget/view/widget/Explan.dart';
+import 'package:flutter_widget/view/widget/layout/ColumnWidget.dart';
+import 'package:flutter_widget/view/widget/layout/ExpandedWidget.dart';
+import 'package:flutter_widget/view/widget/custom/Explan.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
-import 'package:flutter_widget/view/widget/ItemName.dart';
-import 'package:flutter_widget/view/widget/RowWidget.dart';
-import 'package:flutter_widget/view/widget/WrapWidget.dart';
+import 'package:flutter_widget/view/widget/custom/ItemName.dart';
+import 'package:flutter_widget/view/widget/layout/RowWidget.dart';
+import 'package:flutter_widget/view/widget/layout/WrapWidget.dart';
 
 class MultiLayout extends StatefulWidget {
   ItemViewExplainBean data;

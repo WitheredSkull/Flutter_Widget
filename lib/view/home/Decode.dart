@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/view/login/Login.dart';
-import 'package:flutter_widget/view/widget/Item.dart';
-import 'package:flutter_widget/view/widget/Rectangle.dart';
+import 'package:flutter_widget/view/widget/custom/Item.dart';
+import 'package:flutter_widget/view/widget/custom/Rectangle.dart';
 
 class DecodePage extends StatefulWidget {
   @override

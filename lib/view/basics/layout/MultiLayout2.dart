@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/model/bean/ItemViewExplainBean.dart';
 import 'package:flutter_widget/view/base/BaseCodeState.dart';
-import 'package:flutter_widget/view/widget/Explan.dart';
+import 'package:flutter_widget/view/widget/custom/Explan.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
-import 'package:flutter_widget/view/widget/FlowWidget.dart';
-import 'package:flutter_widget/view/widget/GridViewWidget.dart';
-import 'package:flutter_widget/view/widget/ItemName.dart';
-import 'package:flutter_widget/view/widget/ListBodyWidget.dart';
-import 'package:flutter_widget/view/widget/ListViewWidget.dart';
+import 'package:flutter_widget/view/widget/layout/FlowWidget.dart';
+import 'package:flutter_widget/view/widget/layout/GridViewWidget.dart';
+import 'package:flutter_widget/view/widget/custom/ItemName.dart';
+import 'package:flutter_widget/view/widget/layout/ListBodyWidget.dart';
+import 'package:flutter_widget/view/widget/layout/ListViewWidget.dart';
 
 class Multi2Layout extends StatefulWidget {
   ItemViewExplainBean data;
