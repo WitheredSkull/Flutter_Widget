@@ -13,6 +13,7 @@ import 'package:flutter_widget/view/list/InfiniteList.dart';
 import 'package:flutter_widget/view/widget/custom/Item.dart';
 import 'package:flutter_widget/view/widget/custom/Rectangle.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
+import 'package:flutter_widget/view/basics/text/Text.dart' as textView;
 
 class BasicsPage extends StatefulWidget {
   @override
@@ -35,7 +36,7 @@ class BasicsState extends State<BasicsPage> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        children: <Widget>[...?_getLayout(), _getAccessibility()],
+        children: <Widget>[...?_getLayout(),_getText(), _getAccessibility()],
       ),
     );
   }
@@ -46,6 +47,27 @@ class BasicsState extends State<BasicsPage> {
       }));
 
   getNewData() => "随机数${Random().nextInt(100)}";
+
+  Widget _getText(){
+    return RectangleContainer(
+      presenter.textData[0].title,
+      subtitle: presenter.textData[0].explain,
+      children: <Widget>[
+        ItemView(
+          presenter.textData[0].title,
+          beHindText: presenter.textData[0].behindTitle,
+          subtitle: presenter.textData[0].subtitle,
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (setting) {
+              return textView.TextView(
+                presenter.textData[0],
+              );
+            }));
+          },
+        ),
+      ],
+    );
+  }
 
   List<Widget> _getLayout() {
     return <Widget>[
@@ -131,14 +153,6 @@ class BasicsState extends State<BasicsPage> {
               },
             ),
           ]),
-      RectangleContainer(
-        "一个无限列表",
-        children: <Widget>[
-          ItemView("ListView无限循环", subtitle: "测试", onTap: () {
-            _startInfiniteListPage();
-          }),
-        ],
-      )
     ];
   }
 

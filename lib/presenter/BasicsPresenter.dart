@@ -8,6 +8,7 @@ class BasicsPresenter {
   List<ItemViewExplainBean> singleLayoutData = [];
   List<ItemViewExplainBean> multiLayoutData = [];
   List<ItemViewExplainBean> accessibilityData = [];
+  List<ItemViewExplainBean> textData = [];
 
   BasicsPresenter() {
     _initItemData();
@@ -15,7 +16,12 @@ class BasicsPresenter {
 
   _initItemData() {
     _setLayout();
+    _setText();
     _setAccessibility();
+  }
+  
+  _setText(){
+    textData.add(ItemViewExplainBean("Text 文字小部件", "Display and style text.", WidgetData.Text.toString(), ""));
   }
 
   _setLayout() {
