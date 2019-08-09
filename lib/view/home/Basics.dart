@@ -2,18 +2,19 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/presenter/BasicsPresenter.dart';
-import 'package:flutter_widget/view/basics/accessibility/Accessibility.dart';
-import 'package:flutter_widget/view/basics/layout/MultiLayout.dart';
-import 'package:flutter_widget/view/basics/layout/MultiLayout2.dart';
-import 'package:flutter_widget/view/basics/layout/MultiLayout3.dart';
-import 'package:flutter_widget/view/basics/layout/SingleLayout.dart';
-import 'package:flutter_widget/view/basics/layout/SingleLayout2.dart';
-import 'package:flutter_widget/view/basics/layout/SingleLayout3.dart';
+import 'package:flutter_widget/view/basics/accessibility/AccessibilityPage.dart';
+import 'package:flutter_widget/view/basics/input/InputPage.dart';
+import 'package:flutter_widget/view/basics/layout/MultiLayout1Page.dart';
+import 'package:flutter_widget/view/basics/layout/MultiLayout2Page.dart';
+import 'package:flutter_widget/view/basics/layout/MultiLayout3Page.dart';
+import 'package:flutter_widget/view/basics/layout/SingleLayout1Page.dart';
+import 'package:flutter_widget/view/basics/layout/SingleLayout2Page.dart';
+import 'package:flutter_widget/view/basics/layout/SingleLayout3Page.dart';
+import 'package:flutter_widget/view/basics/text/TextPage.dart';
 import 'package:flutter_widget/view/list/InfiniteList.dart';
 import 'package:flutter_widget/view/widget/custom/Item.dart';
 import 'package:flutter_widget/view/widget/custom/Rectangle.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
-import 'package:flutter_widget/view/basics/text/Text.dart' as textView;
 
 class BasicsPage extends StatefulWidget {
   @override
@@ -36,7 +37,7 @@ class BasicsState extends State<BasicsPage> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        children: <Widget>[...?_getLayout(),_getText(), _getAccessibility()],
+        children: <Widget>[...?_getLayout(), _getText(),_getInput(), _getAccessibility()],
       ),
     );
   }
@@ -48,19 +49,40 @@ class BasicsState extends State<BasicsPage> {
 
   getNewData() => "随机数${Random().nextInt(100)}";
 
-  Widget _getText(){
+  Widget _getText() {
     return RectangleContainer(
-      presenter.textData[0].title,
-      subtitle: presenter.textData[0].explain,
+      presenter.textData.title,
+      subtitle: presenter.textData.explain,
       children: <Widget>[
         ItemView(
-          presenter.textData[0].title,
-          beHindText: presenter.textData[0].behindTitle,
-          subtitle: presenter.textData[0].subtitle,
+          presenter.textData.title,
+          beHindText: presenter.textData.behindTitle,
+          subtitle: presenter.textData.subtitle,
           onTap: () {
             Navigator.push(context, MaterialPageRoute(builder: (setting) {
-              return textView.TextView(
-                presenter.textData[0],
+              return TextPage(
+                presenter.textData,
+              );
+            }));
+          },
+        ),
+      ],
+    );
+  }
+
+  Widget _getInput() {
+    return RectangleContainer(
+      presenter.inputData.title,
+      subtitle: presenter.inputData.explain,
+      children: <Widget>[
+        ItemView(
+          presenter.inputData.title,
+          beHindText: presenter.inputData.behindTitle,
+          subtitle: presenter.inputData.subtitle,
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (setting) {
+              return InputPage(
+                presenter.inputData,
               );
             }));
           },
@@ -81,7 +103,7 @@ class BasicsState extends State<BasicsPage> {
             subtitle: presenter.singleLayoutData[0].subtitle,
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (setting) {
-                return LayoutPage(
+                return SingleLayout1Page(
                   presenter.singleLayoutData[0],
                 );
               }));
@@ -93,7 +115,7 @@ class BasicsState extends State<BasicsPage> {
             subtitle: presenter.singleLayoutData[1].subtitle,
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (setting) {
-                return Layout2Page(
+                return SingleLayout2Page(
                   presenter.singleLayoutData[1],
                 );
               }));
@@ -105,7 +127,7 @@ class BasicsState extends State<BasicsPage> {
             subtitle: presenter.singleLayoutData[2].subtitle,
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (setting) {
-                return Layout3Page(
+                return SingleLayout3Page(
                   presenter.singleLayoutData[2],
                 );
               }));
@@ -122,7 +144,7 @@ class BasicsState extends State<BasicsPage> {
               subtitle: presenter.multiLayoutData[0].subtitle,
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (setting) {
-                  return MultiLayout(
+                  return MultiLayout1Page(
                     presenter.multiLayoutData[0],
                   );
                 }));
@@ -134,7 +156,7 @@ class BasicsState extends State<BasicsPage> {
               subtitle: presenter.multiLayoutData[1].subtitle,
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (setting) {
-                  return Multi2Layout(
+                  return Multi2LayoutPage(
                     presenter.multiLayoutData[1],
                   );
                 }));
@@ -146,7 +168,7 @@ class BasicsState extends State<BasicsPage> {
               subtitle: presenter.multiLayoutData[2].subtitle,
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (setting) {
-                  return Multi3Layout(
+                  return Multi3LayoutPage(
                     presenter.multiLayoutData[2],
                   );
                 }));

@@ -11,10 +11,10 @@ import 'package:flutter_widget/view/widget/layout/IntrinsicWidthWidget.dart';
 import 'package:flutter_widget/view/widget/custom/ItemName.dart';
 import 'package:flutter_widget/view/widget/layout/LimitedBoxWidget.dart';
 
-class Layout2Page extends StatefulWidget {
+class SingleLayout2Page extends StatefulWidget {
   ItemViewExplainBean data;
 
-  Layout2Page(this.data);
+  SingleLayout2Page(this.data);
 
   @override
   State<StatefulWidget> createState() {
@@ -22,7 +22,7 @@ class Layout2Page extends StatefulWidget {
   }
 }
 
-class Layout2State extends BaseCodeState<Layout2Page> {
+class Layout2State extends BaseCodeState<SingleLayout2Page> {
   @override
   Widget body() {
     return SingleChildScrollView(

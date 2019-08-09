@@ -9,10 +9,10 @@ import 'package:flutter_widget/view/widget/custom/ItemName.dart';
 import 'package:flutter_widget/view/widget/layout/RowWidget.dart';
 import 'package:flutter_widget/view/widget/layout/WrapWidget.dart';
 
-class MultiLayout extends StatefulWidget {
+class MultiLayout1Page extends StatefulWidget {
   ItemViewExplainBean data;
 
-  MultiLayout(this.data);
+  MultiLayout1Page(this.data);
 
   @override
   State<StatefulWidget> createState() {
@@ -20,7 +20,7 @@ class MultiLayout extends StatefulWidget {
   }
 }
 
-class LayoutState extends BaseCodeState<MultiLayout> {
+class LayoutState extends BaseCodeState<MultiLayout1Page> {
   @override
   Widget body() {
     return SingleChildScrollView(
