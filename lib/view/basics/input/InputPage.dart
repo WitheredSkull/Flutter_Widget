@@ -4,7 +4,9 @@ import 'package:flutter_widget/view/base/BaseCodeState.dart';
 import 'package:flutter_widget/view/widget/custom/Explan.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
 import 'package:flutter_widget/view/widget/custom/ItemName.dart';
+import 'package:flutter_widget/view/widget/input/FormFieldWidget.dart';
 import 'package:flutter_widget/view/widget/input/FormWidget.dart';
+import 'package:flutter_widget/view/widget/input/RawKeyboardListenerWidget.dart';
 
 ///所有的文本输入部件
 class InputPage extends StatefulWidget {
@@ -36,8 +38,12 @@ class InputState extends BaseCodeState<InputPage> {
               Text(widget.data.explain)
             ],
           ),
-          ItemName("DefaultTextStyle"),
+          ItemName("Form"),
           FormWidget(key),
+          ItemName("FormField"),
+          FormFieldWidget(),
+          ItemName("RawKeyboardListener"),
+          RawKeyboardListenerWidget(),
         ]));
   }
 

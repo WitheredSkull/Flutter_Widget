@@ -8,27 +8,51 @@ class BasicsPresenter {
   List<ItemViewExplainBean> singleLayoutData = [];
   List<ItemViewExplainBean> multiLayoutData = [];
   List<ItemViewExplainBean> accessibilityData = [];
+  List<ItemViewExplainBean> basicData = [];
   ItemViewExplainBean textData;
   ItemViewExplainBean inputData;
-
 
   BasicsPresenter() {
     _initItemData();
   }
 
   _initItemData() {
+    _setBasic();
     _setLayout();
     _setText();
     _setInput();
     _setAccessibility();
   }
-  
-  _setText(){
-    textData = ItemViewExplainBean("Text 文字系列小部件", "Display and style text.", WidgetData.Text.toString(), "");
+
+  _setBasic() {
+    basicData.add(ItemViewExplainBean(
+        "Basic 基础部件(壹)",
+        "Widgets you absolutely need to know before building your first Flutter app.",
+        WidgetData.Basics.sublist(0, 3).toString(),
+        ""));
+    basicData.add(ItemViewExplainBean(
+        "Basic 基础部件(贰)",
+        "Widgets you absolutely need to know before building your first Flutter app.",
+        WidgetData.Basics.sublist(3, 6).toString(),
+        ""));
+    basicData.add(ItemViewExplainBean(
+        "Basic 基础部件(叁)",
+        "Widgets you absolutely need to know before building your first Flutter app.",
+        WidgetData.Basics.sublist(6, 9).toString(),
+        ""));
   }
 
-  _setInput(){
-    inputData = ItemViewExplainBean("Input 输入系列小部件", "Take user input in addition to input widgets in Material Components and Cupertino.", WidgetData.Input.toString(), "");
+  _setText() {
+    textData = ItemViewExplainBean("Text 文字系列小部件", "Display and style text.",
+        WidgetData.Text.toString(), "");
+  }
+
+  _setInput() {
+    inputData = ItemViewExplainBean(
+        "Input 输入系列小部件",
+        "Take user input in addition to input widgets in Material Components and Cupertino.",
+        WidgetData.Input.toString(),
+        "");
   }
 
   _setLayout() {
@@ -75,7 +99,10 @@ class BasicsPresenter {
   }
 
   _setAccessibility() {
-    accessibilityData.add(ItemViewExplainBean("Accessibility",
-        "Make your app accessible.", WidgetData.Accessibility.toString(), "无障碍功能可达性，实际使用几率微乎其微"));
+    accessibilityData.add(ItemViewExplainBean(
+        "Accessibility",
+        "Make your app accessible.",
+        WidgetData.Accessibility.toString(),
+        "无障碍功能可达性，实际使用几率微乎其微"));
   }
 }

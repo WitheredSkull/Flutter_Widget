@@ -3,6 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/presenter/BasicsPresenter.dart';
 import 'package:flutter_widget/view/basics/accessibility/AccessibilityPage.dart';
+import 'package:flutter_widget/view/basics/basic/BasicPage1.dart';
+import 'package:flutter_widget/view/basics/basic/BasicPage2.dart';
+import 'package:flutter_widget/view/basics/basic/BasicPage3.dart';
 import 'package:flutter_widget/view/basics/input/InputPage.dart';
 import 'package:flutter_widget/view/basics/layout/MultiLayout1Page.dart';
 import 'package:flutter_widget/view/basics/layout/MultiLayout2Page.dart';
@@ -37,7 +40,13 @@ class BasicsState extends State<BasicsPage> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        children: <Widget>[...?_getLayout(), _getText(),_getInput(), _getAccessibility()],
+        children: <Widget>[
+          _getBasic(),
+          ...?_getLayout(),
+          _getText(),
+          _getInput(),
+          _getAccessibility()
+        ],
       ),
     );
   }
@@ -48,6 +57,49 @@ class BasicsState extends State<BasicsPage> {
       }));
 
   getNewData() => "随机数${Random().nextInt(100)}";
+
+  Widget _getBasic() => RectangleContainer(
+        "基础部件",
+        subtitle: "Widgets you absolutely need to know before building your first Flutter app.",
+        children: <Widget>[
+          ItemView(
+            presenter.basicData[0].title,
+            beHindText: presenter.basicData[0].behindTitle,
+            subtitle: presenter.basicData[0].subtitle,
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                return Basic1Page(
+                  presenter.basicData[0],
+                );
+              }));
+            },
+          ),
+          ItemView(
+            presenter.basicData[1].title,
+            beHindText: presenter.basicData[1].behindTitle,
+            subtitle: presenter.basicData[1].subtitle,
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                return Basic2Page(
+                  presenter.basicData[1],
+                );
+              }));
+            },
+          ),
+          ItemView(
+            presenter.basicData[2].title,
+            beHindText: presenter.basicData[2].behindTitle,
+            subtitle: presenter.basicData[2].subtitle,
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                return Basic3Page(
+                  presenter.basicData[2],
+                );
+              }));
+            },
+          ),
+        ],
+      );
 
   Widget _getText() {
     return RectangleContainer(
