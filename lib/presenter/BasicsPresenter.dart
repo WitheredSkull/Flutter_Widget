@@ -8,7 +8,9 @@ class BasicsPresenter {
   List<ItemViewExplainBean> singleLayoutData = [];
   List<ItemViewExplainBean> multiLayoutData = [];
   List<ItemViewExplainBean> accessibilityData = [];
-  List<ItemViewExplainBean> textData = [];
+  ItemViewExplainBean textData;
+  ItemViewExplainBean inputData;
+
 
   BasicsPresenter() {
     _initItemData();
@@ -17,11 +19,16 @@ class BasicsPresenter {
   _initItemData() {
     _setLayout();
     _setText();
+    _setInput();
     _setAccessibility();
   }
   
   _setText(){
-    textData.add(ItemViewExplainBean("Text 文字小部件", "Display and style text.", WidgetData.Text.toString(), ""));
+    textData = ItemViewExplainBean("Text 文字系列小部件", "Display and style text.", WidgetData.Text.toString(), "");
+  }
+
+  _setInput(){
+    inputData = ItemViewExplainBean("Input 输入系列小部件", "Take user input in addition to input widgets in Material Components and Cupertino.", WidgetData.Input.toString(), "");
   }
 
   _setLayout() {

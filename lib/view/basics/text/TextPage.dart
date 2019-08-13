@@ -4,13 +4,15 @@ import 'package:flutter_widget/view/base/BaseCodeState.dart';
 import 'package:flutter_widget/view/widget/custom/Explan.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
 import 'package:flutter_widget/view/widget/custom/ItemName.dart';
+import 'package:flutter_widget/view/widget/text/RichTextWidget.dart';
+import 'package:flutter_widget/view/widget/text/DefaultTextWidget.dart';
 import 'package:flutter_widget/view/widget/text/TextWidget.dart';
 
-///这个东西是用来辅助障碍人士的
-class TextView extends StatefulWidget {
+///所有的文本部件
+class TextPage extends StatefulWidget {
   ItemViewExplainBean data;
 
-  TextView(this.data);
+  TextPage(this.data);
 
   @override
   State<StatefulWidget> createState() {
@@ -18,7 +20,7 @@ class TextView extends StatefulWidget {
   }
 }
 
-class TextState extends BaseCodeState<TextView> {
+class TextState extends BaseCodeState<TextPage> {
   @override
   Widget body() {
     return SingleChildScrollView(
@@ -35,6 +37,10 @@ class TextState extends BaseCodeState<TextView> {
           ],
         ),
         ItemName("DefaultTextStyle"),
+        DefaultWidget(),
+        ItemName("RichText"),
+        RichTextWidget(),
+        ItemName("Text"),
         TextWidget(),
       ],
     ));

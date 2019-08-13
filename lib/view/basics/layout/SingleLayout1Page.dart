@@ -11,10 +11,10 @@ import 'package:flutter_widget/view/widget/layout/FittedBoxWidget.dart';
 import 'package:flutter_widget/view/widget/custom/ItemName.dart';
 import 'package:flutter_widget/view/widget/layout/PaddingWidget.dart';
 
-class LayoutPage extends StatefulWidget {
+class SingleLayout1Page extends StatefulWidget {
   ItemViewExplainBean data;
 
-  LayoutPage(this.data);
+  SingleLayout1Page(this.data);
 
   @override
   State<StatefulWidget> createState() {
@@ -22,7 +22,7 @@ class LayoutPage extends StatefulWidget {
   }
 }
 
-class LayoutState extends BaseCodeState<LayoutPage> {
+class LayoutState extends BaseCodeState<SingleLayout1Page> {
   GlobalKey key = GlobalKey();
 
   @override

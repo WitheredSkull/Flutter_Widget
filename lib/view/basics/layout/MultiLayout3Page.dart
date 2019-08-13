@@ -10,10 +10,10 @@ import 'package:flutter_widget/view/widget/layout/LayoutBuilderWidget.dart';
 import 'package:flutter_widget/view/widget/layout/StackWidget.dart';
 import 'package:flutter_widget/view/widget/layout/TableWidget.dart';
 
-class Multi3Layout extends StatefulWidget {
+class Multi3LayoutPage extends StatefulWidget {
   ItemViewExplainBean data;
 
-  Multi3Layout(this.data);
+  Multi3LayoutPage(this.data);
 
   @override
   State<StatefulWidget> createState() {
@@ -21,7 +21,7 @@ class Multi3Layout extends StatefulWidget {
   }
 }
 
-class LayoutState extends BaseCodeState<Multi3Layout> {
+class LayoutState extends BaseCodeState<Multi3LayoutPage> {
   var isShowFirst = true;
 
   @override

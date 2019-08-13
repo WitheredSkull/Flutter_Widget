@@ -11,10 +11,10 @@ import 'package:flutter_widget/view/widget/layout/SizedBoxWidget.dart';
 import 'package:flutter_widget/view/widget/layout/SizedOverflowBoxWidget.dart';
 import 'package:flutter_widget/view/widget/layout/TransformWidget.dart';
 
-class Layout3Page extends StatefulWidget {
+class SingleLayout3Page extends StatefulWidget {
   ItemViewExplainBean data;
 
-  Layout3Page(this.data);
+  SingleLayout3Page(this.data);
 
   @override
   State<StatefulWidget> createState() {
@@ -22,7 +22,7 @@ class Layout3Page extends StatefulWidget {
   }
 }
 
-class Layout3State extends BaseCodeState<Layout3Page> {
+class Layout3State extends BaseCodeState<SingleLayout3Page> {
   bool offstage = false;
 
   @override
