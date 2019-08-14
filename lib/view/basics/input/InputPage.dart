@@ -19,7 +19,8 @@ class InputPage extends StatefulWidget {
 }
 
 class InputState extends BaseCodeState<InputPage> {
-  GlobalKey<FormState> key = GlobalKey<FormState>();
+  GlobalKey<FormState> inputKey = GlobalKey<FormState>();
+  TextEditingController controller = TextEditingController();
 
   @override
   Widget body() {
@@ -37,7 +38,7 @@ class InputState extends BaseCodeState<InputPage> {
             ],
           ),
           ItemName("DefaultTextStyle"),
-          FormWidget(key),
+          FormWidget(inputKey,controller),
         ]));
   }
 

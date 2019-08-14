@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget/view/widget/custom/Toast.dart';
 
 class FormWidget extends StatelessWidget {
-  GlobalKey<FormState> key2;
-  TextEditingController controller = TextEditingController();
+  GlobalKey<FormState> inputKey;
+  TextEditingController controller;
 
-  FormWidget(this.key2);
+  FormWidget(this.inputKey, this.controller);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class FormWidget extends StatelessWidget {
     return Form(
 
         ///传入一个可以控制整个表单信息的key
-        key: key2,
+        key: inputKey,
         ///是否开启自动验证
         autovalidate: true,
         onWillPop: () {
@@ -37,6 +38,7 @@ class FormWidget extends StatelessWidget {
           }
         },
         onChanged: () {
+          Toast().show("测试${controller.text}");
           if (controller.text.length < 3) {
             print("字数不够");
           }else{
