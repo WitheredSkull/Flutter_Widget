@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 class ImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    ///展示一张图片，Flutter拓展了很多展示图片的静态方法：
+    /// return Image.asset("");//直接读取资源文件
+    /// return Image.network("");//从网络加载
+    /// return Image.file(file);//从文件读取
+    /// return Image.memory(bytes);//从内存读取
+    ///A widget that displays an image.
     return Image(
       image: AssetImage("assets/images/icon/flutter_widget.png"),
 

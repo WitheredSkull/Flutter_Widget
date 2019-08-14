@@ -39,10 +39,8 @@ class InputState extends BaseCodeState<InputPage> {
               Text(widget.data.explain)
             ],
           ),
-          ItemName("DefaultTextStyle"),
-          FormWidget(inputKey,controller),
           ItemName("Form"),
-          FormWidget(key),
+              FormWidget(inputKey,controller),
           ItemName("FormField"),
           FormFieldWidget(),
           ItemName("RawKeyboardListener"),
