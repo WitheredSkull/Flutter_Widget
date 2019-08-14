@@ -38,7 +38,7 @@ class BasicsPresenter {
     basicData.add(ItemViewExplainBean(
         "Basic 基础部件(叁)",
         "Widgets you absolutely need to know before building your first Flutter app.",
-        WidgetData.Basics.sublist(6, 9).toString(),
+        WidgetData.Basics.sublist(6, WidgetData.Basics.length-1).toString(),
         ""));
   }
 

@@ -3,9 +3,11 @@ import 'package:flutter_widget/model/bean/ItemViewExplainBean.dart';
 import 'package:flutter_widget/view/base/BaseCodeState.dart';
 import 'package:flutter_widget/view/widget/basic/PlaceholderWidget.dart';
 import 'package:flutter_widget/view/widget/basic/RaisedButtonWidget.dart';
+import 'package:flutter_widget/view/widget/basic/ScaffoldWidget.dart';
 import 'package:flutter_widget/view/widget/custom/Explan.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
 import 'package:flutter_widget/view/widget/custom/ItemName.dart';
+import 'package:flutter_widget/view/widget/layout/RowWidget.dart';
 
 ///所有的文本输入部件
 class Basic3Page extends StatefulWidget {
@@ -42,6 +44,11 @@ class BasicState extends BaseCodeState<Basic3Page> {
           ),
           ItemName("RaisedButton"),
           RaisedButtonWidget(),
+              ItemName("Row"),
+              RowWidget(),
+              ItemName("Scaffold"),
+            ScaffoldWidget(),
+
         ]));
   }
 
