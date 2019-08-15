@@ -3,7 +3,7 @@ import 'package:flutter_widget/model/bean/ItemViewExplainBean.dart';
 import 'package:flutter_widget/view/base/BaseCodeState.dart';
 import 'package:flutter_widget/view/widget/basic/FlutterLogoWidget.dart';
 import 'package:flutter_widget/view/widget/basic/IconWidget.dart';
-import 'package:flutter_widget/view/widget/basic/ImageWidget.dart';
+import 'package:flutter_widget/view/widget/assetsImagesIcons/ImageWidget.dart';
 import 'package:flutter_widget/view/widget/custom/Explan.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
 import 'package:flutter_widget/view/widget/custom/ItemName.dart';

@@ -70,7 +70,7 @@ var AnimationAndMotion = [
 
 ///Manage assets, display images, and show icons.
 var AssetsImagesIcons = [
-  "AssetBundle",
+  "Assets",
   "Icon",
   "Image",
   "RawImage",

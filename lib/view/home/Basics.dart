@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/presenter/BasicsPresenter.dart';
 import 'package:flutter_widget/view/basics/accessibility/AccessibilityPage.dart';
+import 'package:flutter_widget/view/basics/assetsImagesIcons/AssetsImagesIconsPage.dart';
 import 'package:flutter_widget/view/basics/basic/BasicPage1.dart';
 import 'package:flutter_widget/view/basics/basic/BasicPage2.dart';
 import 'package:flutter_widget/view/basics/basic/BasicPage3.dart';
@@ -45,6 +46,7 @@ class BasicsState extends State<BasicsPage> {
           ...?_getLayout(),
           _getText(),
           _getInput(),
+          _getAssetsImagesIcons(),
           _getAccessibility()
         ],
       ),
@@ -60,7 +62,8 @@ class BasicsState extends State<BasicsPage> {
 
   Widget _getBasic() => RectangleContainer(
         "基础部件",
-        subtitle: "Widgets you absolutely need to know before building your first Flutter app.",
+        subtitle:
+            "Widgets you absolutely need to know before building your first Flutter app.",
         children: <Widget>[
           ItemView(
             presenter.basicData[0].title,
@@ -250,4 +253,23 @@ class BasicsState extends State<BasicsPage> {
       ],
     );
   }
+
+  Widget _getAssetsImagesIcons() => RectangleContainer(
+        "图片系列部件",
+        subtitle: presenter.assetsImagesIconsData.explain,
+        children: <Widget>[
+          ItemView(
+            presenter.assetsImagesIconsData.title,
+            beHindText: presenter.assetsImagesIconsData.behindTitle,
+            subtitle: presenter.assetsImagesIconsData.subtitle,
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                return AssetsImagesIconsPage(
+                  presenter.assetsImagesIconsData,
+                );
+              }));
+            },
+          ),
+        ],
+      );
 }

@@ -11,6 +11,7 @@ class BasicsPresenter {
   List<ItemViewExplainBean> basicData = [];
   ItemViewExplainBean textData;
   ItemViewExplainBean inputData;
+  ItemViewExplainBean assetsImagesIconsData;
 
   BasicsPresenter() {
     _initItemData();
@@ -21,6 +22,7 @@ class BasicsPresenter {
     _setLayout();
     _setText();
     _setInput();
+    _setAssetsImagesIconsData();
     _setAccessibility();
   }
 
@@ -38,7 +40,7 @@ class BasicsPresenter {
     basicData.add(ItemViewExplainBean(
         "Basic 基础部件(叁)",
         "Widgets you absolutely need to know before building your first Flutter app.",
-        WidgetData.Basics.sublist(6, WidgetData.Basics.length-1).toString(),
+        WidgetData.Basics.sublist(6, WidgetData.Basics.length - 1).toString(),
         ""));
   }
 
@@ -104,5 +106,13 @@ class BasicsPresenter {
         "Make your app accessible.",
         WidgetData.Accessibility.toString(),
         "无障碍功能可达性，实际使用几率微乎其微"));
+  }
+
+  _setAssetsImagesIconsData() {
+    assetsImagesIconsData = ItemViewExplainBean(
+        "Assets,Images and Icons",
+        "Manage assets, display images, and show icons.",
+        WidgetData.AssetsImagesIcons.toString(),
+        "");
   }
 }

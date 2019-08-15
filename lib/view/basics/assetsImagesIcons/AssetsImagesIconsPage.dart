@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/model/bean/ItemViewExplainBean.dart';
 import 'package:flutter_widget/view/base/BaseCodeState.dart';
+import 'package:flutter_widget/view/widget/assetsImagesIcons/AssetsWidget.dart';
+import 'package:flutter_widget/view/widget/assetsImagesIcons/IconWidget.dart';
+import 'package:flutter_widget/view/widget/assetsImagesIcons/ImageWidget.dart';
+import 'package:flutter_widget/view/widget/assetsImagesIcons/RawImageWidget.dart';
 import 'package:flutter_widget/view/widget/basic/PlaceholderWidget.dart';
 import 'package:flutter_widget/view/widget/basic/RaisedButtonWidget.dart';
 import 'package:flutter_widget/view/widget/basic/ScaffoldWidget.dart';
@@ -9,26 +13,26 @@ import 'package:flutter_widget/application/app.dart' as APP;
 import 'package:flutter_widget/view/widget/custom/ItemName.dart';
 import 'package:flutter_widget/view/widget/layout/RowWidget.dart';
 
-///所有的文本输入部件
-class Basic3Page extends StatefulWidget {
+///所有的图片展示部件
+class AssetsImagesIconsPage extends StatefulWidget {
   ItemViewExplainBean data;
 
-  Basic3Page(this.data);
+  AssetsImagesIconsPage(this.data);
 
   @override
   State<StatefulWidget> createState() {
-    return BasicState();
+    return AssetsImagesIconsPageState();
   }
 }
 
-class BasicState extends BaseCodeState<Basic3Page> {
+class AssetsImagesIconsPageState extends BaseCodeState<AssetsImagesIconsPage> {
   @override
   Widget body() {
     return SingleChildScrollView(
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
           Explan(
             widget.data.title,
             marginTop: APP.AssetsSize.SIZE_DEFAULT_PADDING,
@@ -37,27 +41,17 @@ class BasicState extends BaseCodeState<Basic3Page> {
               Text(widget.data.explain)
             ],
           ),
-          ItemName("Placeholder"),
-          Container(
-            width: 200,
-            child: PlaceholderWidget(),
-          ),
-          ItemName("RaisedButton"),
-          RaisedButtonWidget(),
-          ItemName("Row"),
-          RowWidget(),
-          ItemName("Scaffold"),
-          RaisedButton(
-            onPressed: () => {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) {
-                  return ScaffoldWidget();
-                }),
-              ),
-            },
-            child: Text("进入Scaffold"),
-          )
-        ]));
+          ItemName("Assets"),
+          AssetsWidget(),
+          ItemName("Icon"),
+          IconWidget(),
+          ItemName("Image"),
+          ImageWidget(),
+          ItemName("Image"),
+          RawImageWidget(),
+        ],
+      ),
+    );
   }
 
   @override
