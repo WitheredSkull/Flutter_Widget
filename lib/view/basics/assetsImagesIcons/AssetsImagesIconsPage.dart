@@ -47,7 +47,7 @@ class AssetsImagesIconsPageState extends BaseCodeState<AssetsImagesIconsPage> {
           IconWidget(),
           ItemName("Image"),
           ImageWidget(),
-          ItemName("Image"),
+          ItemName("RawImage"),
           RawImageWidget(),
         ],
       ),

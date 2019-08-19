@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/presenter/BasicsPresenter.dart';
 import 'package:flutter_widget/view/basics/accessibility/AccessibilityPage.dart';
+import 'package:flutter_widget/view/basics/animationMotion/AnimationMotionPage.dart';
 import 'package:flutter_widget/view/basics/assetsImagesIcons/AssetsImagesIconsPage.dart';
 import 'package:flutter_widget/view/basics/basic/BasicPage1.dart';
 import 'package:flutter_widget/view/basics/basic/BasicPage2.dart';
@@ -47,6 +48,7 @@ class BasicsState extends State<BasicsPage> {
           _getText(),
           _getInput(),
           _getAssetsImagesIcons(),
+          _getAnimationMotion(),
           _getAccessibility()
         ],
       ),
@@ -266,6 +268,25 @@ class BasicsState extends State<BasicsPage> {
               Navigator.push(context, MaterialPageRoute(builder: (setting) {
                 return AssetsImagesIconsPage(
                   presenter.assetsImagesIconsData,
+                );
+              }));
+            },
+          ),
+        ],
+      );
+
+  Widget _getAnimationMotion() => RectangleContainer(
+        "动画系列部件",
+        subtitle: presenter.animationMotionData.explain,
+        children: <Widget>[
+          ItemView(
+            presenter.animationMotionData.title,
+            beHindText: presenter.animationMotionData.behindTitle,
+            subtitle: presenter.animationMotionData.subtitle,
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                return AnimationMotionPage(
+                  presenter.animationMotionData,
                 );
               }));
             },

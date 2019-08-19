@@ -12,6 +12,7 @@ class BasicsPresenter {
   ItemViewExplainBean textData;
   ItemViewExplainBean inputData;
   ItemViewExplainBean assetsImagesIconsData;
+  ItemViewExplainBean animationMotionData;
 
   BasicsPresenter() {
     _initItemData();
@@ -24,6 +25,7 @@ class BasicsPresenter {
     _setInput();
     _setAssetsImagesIconsData();
     _setAccessibility();
+    _setAnimationMotion();
   }
 
   _setBasic() {
@@ -114,5 +116,11 @@ class BasicsPresenter {
         "Manage assets, display images, and show icons.",
         WidgetData.AssetsImagesIcons.toString(),
         "");
+  }
+
+  void _setAnimationMotion() {
+    animationMotionData = ItemViewExplainBean(
+        "Animation and motion", "Bring animations to your app.",
+        WidgetData.AnimationAndMotion.toString(), "");
   }
 }

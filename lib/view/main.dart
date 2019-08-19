@@ -25,7 +25,8 @@ class MainApp extends StatelessWidget {
               ),
               subtitle: TextStyle(
                   color: APP.AssetsColor.COLOR_SUBTITLE_TEXT,
-                  fontSize: APP.AssetsSize.SIZE_SUBTITLE_TEXT))),
+                  fontSize: APP.AssetsSize.SIZE_SUBTITLE_TEXT),
+          )),
       initialRoute: "/splash",
       onGenerateRoute: (setting) {
         return MaterialPageRoute(builder: (context) {
