@@ -12,7 +12,7 @@ class BasicsPresenter {
   ItemViewExplainBean textData;
   ItemViewExplainBean inputData;
   ItemViewExplainBean assetsImagesIconsData;
-  ItemViewExplainBean animationMotionData;
+  List<ItemViewExplainBean> animationMotionData = [];
 
   BasicsPresenter() {
     _initItemData();
@@ -119,8 +119,22 @@ class BasicsPresenter {
   }
 
   void _setAnimationMotion() {
-    animationMotionData = ItemViewExplainBean(
-        "Animation and motion", "Bring animations to your app.",
-        WidgetData.AnimationAndMotion.toString(), "");
+    animationMotionData.add(ItemViewExplainBean(
+        "Animation and motion",
+        "Bring animations to your app.",
+        WidgetData.AnimationAndMotion.sublist(0, 6).toString(),
+        ""));
+    animationMotionData.add(ItemViewExplainBean(
+        "Animation and motion",
+        "Bring animations to your app.",
+        WidgetData.AnimationAndMotion.sublist(6, 12).toString(),
+        ""));
+    animationMotionData.add(ItemViewExplainBean(
+        "Animation and motion",
+        "Bring animations to your app.",
+        WidgetData.AnimationAndMotion.sublist(
+                12, WidgetData.AnimationAndMotion.length)
+            .toString(),
+        ""));
   }
 }

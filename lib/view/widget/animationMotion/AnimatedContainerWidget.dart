@@ -49,7 +49,7 @@ class AnimationContainerState extends State<AnimatedContainerWidget> {
         ),
       ),
 
-      ///使弯曲
+      ///动画曲线函数
       curve: Curves.linear,
 
       ///持续时间

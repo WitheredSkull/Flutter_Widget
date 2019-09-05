@@ -7,23 +7,24 @@ import 'package:flutter_widget/view/widget/animationMotion/AnimatedContainerWidg
 import 'package:flutter_widget/view/widget/animationMotion/AnimatedCrossFadeWidget.dart';
 import 'package:flutter_widget/view/widget/animationMotion/AnimatedDefaultTextStyleWidget.dart';
 import 'package:flutter_widget/view/widget/animationMotion/AnimatedListStateWidget.dart';
+import 'package:flutter_widget/view/widget/animationMotion/AnimatedModalBarrierWidget.dart';
 import 'package:flutter_widget/view/widget/assetsImagesIcons/AssetsWidget.dart';
 import 'package:flutter_widget/view/widget/custom/Explan.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
 import 'package:flutter_widget/view/widget/custom/ItemName.dart';
 
-class AnimationMotionPage extends StatefulWidget {
+class AnimationMotionPage1 extends StatefulWidget {
   ItemViewExplainBean data;
 
-  AnimationMotionPage(this.data);
+  AnimationMotionPage1(this.data);
 
   @override
   State<StatefulWidget> createState() {
-    return AnimationMotionPageState();
+    return AnimationMotionPage1State();
   }
 }
 
-class AnimationMotionPageState extends BaseCodeState<AnimationMotionPage>
+class AnimationMotionPage1State extends BaseCodeState<AnimationMotionPage1>
     with SingleTickerProviderStateMixin {
   Animation<double> animation;
   AnimationController animationController;
@@ -80,7 +81,11 @@ class AnimationMotionPageState extends BaseCodeState<AnimationMotionPage>
           AnimatedDefaultTextStyleWidget(),
           ItemName("AnimatedList"),
           AnimatedListStateWidget(),
-          SizedBox(height: 48,),
+          ItemName("AnimatedModalBarrier"),
+          AnimatedModalBarrierWidget(),
+          SizedBox(
+            height: 48,
+          ),
         ],
       ),
     );

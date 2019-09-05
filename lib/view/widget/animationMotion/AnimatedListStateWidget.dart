@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class AnimatedListStateWidget extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return AnimatedListStateState();
   }
 }
@@ -72,7 +71,7 @@ class AnimatedListStateState extends State<AnimatedListStateWidget>
           ///滑动响应用户操作效果
 //          physics:ScrollPhysics,
           ///是否自动收缩控件
-          shrinkWrap: false,
+          shrinkWrap: true,
 
           ///内边距
           padding: EdgeInsets.all(0),
