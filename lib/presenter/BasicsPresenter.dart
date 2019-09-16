@@ -13,6 +13,7 @@ class BasicsPresenter {
   ItemViewExplainBean inputData;
   ItemViewExplainBean assetsImagesIconsData;
   List<ItemViewExplainBean> animationMotionData = [];
+  List<ItemViewExplainBean> scrolling = [];
 
   BasicsPresenter() {
     _initItemData();
@@ -26,6 +27,7 @@ class BasicsPresenter {
     _setAssetsImagesIconsData();
     _setAccessibility();
     _setAnimationMotion();
+    _setScrolling();
   }
 
   _setBasic() {
@@ -134,6 +136,25 @@ class BasicsPresenter {
         "Bring animations to your app.",
         WidgetData.AnimationAndMotion.sublist(
                 12, WidgetData.AnimationAndMotion.length)
+            .toString(),
+        ""));
+  }
+  void _setScrolling() {
+    scrolling.add(ItemViewExplainBean(
+        "Scrolling",
+        "Scroll multiple widgets as children of the parent.",
+        WidgetData.Scrolling.sublist(0, 4).toString(),
+        ""));
+    scrolling.add(ItemViewExplainBean(
+        "Scrolling",
+        "Scroll multiple widgets as children of the parent.",
+        WidgetData.Scrolling.sublist(4, 8).toString(),
+        ""));
+    scrolling.add(ItemViewExplainBean(
+        "Scrolling",
+        "Scroll multiple widgets as children of the parent.",
+        WidgetData.Scrolling.sublist(
+                8, WidgetData.Scrolling.length)
             .toString(),
         ""));
   }

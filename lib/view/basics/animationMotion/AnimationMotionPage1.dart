@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/scheduler/ticker.dart';
 import 'package:flutter_widget/model/bean/ItemViewExplainBean.dart';
 import 'package:flutter_widget/view/base/BaseCodeState.dart';
+import 'package:flutter_widget/view/widget/custom/Explan.dart';
+import 'package:flutter_widget/application/app.dart' as APP;
+import 'package:flutter_widget/view/widget/custom/ItemName.dart';
 import 'package:flutter_widget/view/widget/animationMotion/AnimatedBuilderWidget.dart';
 import 'package:flutter_widget/view/widget/animationMotion/AnimatedContainerWidget.dart';
 import 'package:flutter_widget/view/widget/animationMotion/AnimatedCrossFadeWidget.dart';
 import 'package:flutter_widget/view/widget/animationMotion/AnimatedDefaultTextStyleWidget.dart';
 import 'package:flutter_widget/view/widget/animationMotion/AnimatedListStateWidget.dart';
 import 'package:flutter_widget/view/widget/animationMotion/AnimatedModalBarrierWidget.dart';
-import 'package:flutter_widget/view/widget/assetsImagesIcons/AssetsWidget.dart';
-import 'package:flutter_widget/view/widget/custom/Explan.dart';
-import 'package:flutter_widget/application/app.dart' as APP;
-import 'package:flutter_widget/view/widget/custom/ItemName.dart';
 
 class AnimationMotionPage1 extends StatefulWidget {
   ItemViewExplainBean data;

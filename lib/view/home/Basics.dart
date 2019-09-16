@@ -17,6 +17,9 @@ import 'package:flutter_widget/view/basics/layout/MultiLayout3Page.dart';
 import 'package:flutter_widget/view/basics/layout/SingleLayout1Page.dart';
 import 'package:flutter_widget/view/basics/layout/SingleLayout2Page.dart';
 import 'package:flutter_widget/view/basics/layout/SingleLayout3Page.dart';
+import 'package:flutter_widget/view/basics/scrolling/ScrollingPage1.dart';
+import 'package:flutter_widget/view/basics/scrolling/ScrollingPage2.dart';
+import 'package:flutter_widget/view/basics/scrolling/ScrollingPage3.dart';
 import 'package:flutter_widget/view/basics/text/TextPage.dart';
 import 'package:flutter_widget/view/list/InfiniteList.dart';
 import 'package:flutter_widget/view/widget/custom/Item.dart';
@@ -52,6 +55,7 @@ class BasicsState extends State<BasicsPage> {
           _getInput(),
           _getAssetsImagesIcons(),
           _getAnimationMotion(),
+          _getScrolling(),
           _getAccessibility()
         ],
       ),
@@ -314,6 +318,49 @@ class BasicsState extends State<BasicsPage> {
               Navigator.push(context, MaterialPageRoute(builder: (setting) {
                 return AnimationMotionPage3(
                   presenter.animationMotionData[2],
+                );
+              }));
+            },
+          )
+        ],
+      );
+
+  Widget _getScrolling() => RectangleContainer(
+        "滑动系列部件",
+        subtitle: presenter.scrolling[0].explain,
+        children: <Widget>[
+          ItemView(
+            presenter.scrolling[0].title,
+            beHindText: presenter.scrolling[0].behindTitle,
+            subtitle: presenter.scrolling[0].subtitle,
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                return ScrollingPage1(
+                  presenter.scrolling[0],
+                );
+              }));
+            },
+          ),
+          ItemView(
+            presenter.scrolling[1].title,
+            beHindText: presenter.scrolling[1].behindTitle,
+            subtitle: presenter.scrolling[1].subtitle,
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                return ScrollingPage2(
+                  presenter.scrolling[1],
+                );
+              }));
+            },
+          ),
+          ItemView(
+            presenter.scrolling[2].title,
+            beHindText: presenter.scrolling[2].behindTitle,
+            subtitle: presenter.scrolling[2].subtitle,
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                return ScrollingPage3(
+                  presenter.scrolling[2],
                 );
               }));
             },
