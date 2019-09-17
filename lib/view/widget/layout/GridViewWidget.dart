@@ -52,7 +52,7 @@ class GridViewWidget extends StatelessWidget {
         ///同时缓存多少个ITEM
         cacheExtent: 2,
 
-        ///子部件统计(默认是不用做的)
+        ///语义子部件统计(默认是不用做的)
 //      semanticChildCount: 4,
         ///拖动行为
 //      dragStartBehavior: DragStartBehavior.start,

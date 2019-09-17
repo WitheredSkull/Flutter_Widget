@@ -56,7 +56,7 @@ class AnimationContainerState extends State<AnimatedContainerWidget> {
       duration: Duration(seconds: 1),
 
       ///相反的持续时间
-      reverseDuration: Duration(seconds: 1),
+//      reverseDuration: Duration(seconds: 1),
     );
   }
 }

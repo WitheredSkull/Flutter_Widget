@@ -5,7 +5,10 @@ import 'package:flutter_widget/view/widget/custom/DefaultButton.dart';
 import 'package:flutter_widget/view/widget/custom/Explan.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
 import 'package:flutter_widget/view/widget/custom/ItemName.dart';
+import 'package:flutter_widget/view/widget/layout/GridViewWidget.dart';
+import 'package:flutter_widget/view/widget/layout/ListViewWidget.dart';
 import 'package:flutter_widget/view/widget/scrolling/CustomScrollViewWidgetPage.dart';
+import 'package:flutter_widget/view/widget/scrolling/NestedScrollViewWidget.dart';
 
 class ScrollingPage1 extends StatefulWidget {
   ItemViewExplainBean data;
@@ -18,8 +21,7 @@ class ScrollingPage1 extends StatefulWidget {
   }
 }
 
-class ScrollingPage1State extends BaseCodeState<ScrollingPage1>{
-
+class ScrollingPage1State extends BaseCodeState<ScrollingPage1> {
   @override
   Widget body() {
     return SingleChildScrollView(
@@ -35,12 +37,22 @@ class ScrollingPage1State extends BaseCodeState<ScrollingPage1>{
               Text(widget.data.explain)
             ],
           ),
-          ItemName("AnimatedBuild"),
-          DefaultButton("CustomScrollView", (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (context){
+          ItemName("CustomScrollView"),
+          DefaultButton("CustomScrollView", () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) {
               return CustomScrollViewWidgetPageApp();
             }));
-          })
+          }),
+          ItemName("GridView"),
+          GridViewWidget(),
+          ItemName("ListView"),
+          ListViewWidget(),
+          ItemName("NestedScrollView"),
+          SizedBox(
+            height: 500,
+            child: NestedScrollViewWidget(),
+          ),
+          SizedBox(height: 40,),
         ],
       ),
     );

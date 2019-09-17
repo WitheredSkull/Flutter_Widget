@@ -43,7 +43,7 @@ class AnimatedDefaultTextStyleState
           curve: Curves.linear,
 
           ///复原的动画时长
-          reverseDuration: Duration(seconds: 2),
+//          reverseDuration: Duration(seconds: 2),
         ),
         SizedBox(width: 30,),
         MaterialButton(
