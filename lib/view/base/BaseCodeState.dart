@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
 
 abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
-
+  BuildContext _context;
   ///跳转的链接
   String path;
 
@@ -20,6 +20,7 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
 
   @override
   Widget build(BuildContext context) {
+    _context = context;
     var appbar = AppBar(
       title: Text(title() != null ? title() : ""),
       backgroundColor: APP.AssetsColor.COLOR_PRIMARY,
@@ -65,6 +66,8 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
       return List<Widget>();
     }
   }
+
+  getContext()=>_context;
 
   startCode(String path) {}
 }

@@ -105,7 +105,8 @@ class ItemView extends StatelessWidget {
                   Text(
                     text,
                     style: TextStyle(
-                        color: Colors.red,
+                      backgroundColor: Color(0xFFdee1e4),
+                        color: Colors.white,
                         decoration: TextDecoration.none,
                         fontSize: Theme.of(context).textTheme.title.fontSize),
                   ),
@@ -116,7 +117,8 @@ class ItemView extends StatelessWidget {
                     Text(
                       beHindText,
                       style: TextStyle(
-                          color: Colors.yellow,
+                          backgroundColor: Color(0xFF717c86),
+                          color: Colors.white,
                           decoration: TextDecoration.none,
                           fontSize: Theme.of(context).textTheme.title.fontSize),
                     ),
@@ -128,7 +130,8 @@ class ItemView extends StatelessWidget {
                     Text(
                       subtitle,
                       style: TextStyle(
-                          color: Colors.blue,
+                          backgroundColor: Color(0xFF2a3841),
+                          color: Colors.white,
                           decoration: TextDecoration.none,
                           fontSize: Theme.of(context).textTheme.title.fontSize),
                     ),

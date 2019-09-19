@@ -12,39 +12,49 @@ class NotificationListenerWidget extends StatefulWidget {
 
 class NotificationListenerWidgetState
     extends State<NotificationListenerWidget> {
-  int length = 4;
+  String tip = "滑动到顶部";
 
   @override
   Widget build(BuildContext context) {
-    return NotificationListener(
+    print("重新构建");
+    return NotificationListener<ScrollNotification>(
       ///子部件
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          DefaultButton("点击删除Item", () {
-            ListNotification().dispatch(context);
-          }),
-          ListView.builder(
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text("NotificationListener$index"),
-              );
-            },
-            itemCount: length,
+          Text(
+            tip,
+            style: TextStyle(fontSize: 24),
+          ),
+          Container(
+            height: 200,
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text("NotificationListener$index"),
+                );
+              },
+              itemCount: 8,
+            ),
           )
         ],
       ),
 
       ///监听的Callback，当有发送ListNotification().dispatch(context);事件时会被回调
-      onNotification: (notification) {
+      onNotification: (ScrollNotification notification) {
+        if (notification.metrics.extentAfter == 0.0) {
+          tip = "滑动到底部";
+        } else if (notification.metrics.extentBefore == 0.0) {
+          tip = "滑动到顶部";
+        } else {
+          tip = "滑动在中间";
+        }
         setState(() {
-          --length;
+
         });
         return true;
       },
     );
   }
 }
-
-class ListNotification extends Notification {}
