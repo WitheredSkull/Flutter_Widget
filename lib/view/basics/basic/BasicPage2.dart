@@ -43,6 +43,7 @@ class BasicState extends BaseCodeState<Basic2Page> {
               IconWidget(),
               ItemName("Image"),
               ImageWidget(),
+              SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
             ]));
   }
 

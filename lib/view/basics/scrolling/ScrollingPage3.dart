@@ -50,9 +50,7 @@ class ScrollingPage3State extends BaseCodeState<ScrollingPage3> {
             height: 150,
             child: SingleChildScrollViewWidget(),
           ),
-          SizedBox(
-            height: 40,
-          ),
+          SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
         ],
       ),
     );

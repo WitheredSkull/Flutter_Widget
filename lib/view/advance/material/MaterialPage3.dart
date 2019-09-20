@@ -7,6 +7,10 @@ import 'package:flutter_widget/view/widget/custom/ItemName.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
 import 'package:flutter_widget/view/widget/material/CheckBoxWidget.dart';
 import 'package:flutter_widget/view/widget/material/DateWidget.dart';
+import 'package:flutter_widget/view/widget/material/RadioWidget.dart';
+import 'package:flutter_widget/view/widget/material/SliderWidget.dart';
+import 'package:flutter_widget/view/widget/material/SwitchWidget.dart';
+import 'package:flutter_widget/view/widget/text/TextFieldWidget.dart';
 
 class MaterialPage3 extends StatefulWidget {
   ItemViewExplainBean data;
@@ -43,6 +47,14 @@ class MaterialPage3State extends BaseCodeState<MaterialPage3> {
       DefaultButton("TimePicker", () {
         DateWidget.showTimePickerDialog(getContext());
       }),
+      ItemName("Radio"),
+      RadioWidget(),
+      ItemName("Slider"),
+      SliderWidget(),
+      ItemName("Switch"),
+      SwitchWidget(),
+      ItemName("TextField"),
+      TextFieldWidget(),
     ]));
   }
 

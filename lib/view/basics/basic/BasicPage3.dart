@@ -56,6 +56,9 @@ class BasicState extends BaseCodeState<Basic3Page> {
               ),
             },
             child: Text("进入Scaffold"),
+          ),
+          SizedBox(
+            height: APP.AssetsSize.PAGE_EXPANDED,
           )
         ]));
   }

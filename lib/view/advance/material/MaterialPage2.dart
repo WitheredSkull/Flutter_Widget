@@ -53,9 +53,7 @@ class MaterialPage2State extends BaseCodeState<MaterialPage2> {
           PopupMenuButtonWidget(),
           ItemName("RasiedButton"),
           RaisedButtonWidget(),
-          SizedBox(
-            height: 40,
-          ),
+          SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
         ],
       ),
     );

@@ -55,9 +55,10 @@ class LayoutState extends BaseCodeState<Multi2LayoutPage> {
             width: 240,
             height: 150,
             child: GridViewWidget(),
+          ),
+          SizedBox(
+            height: APP.AssetsSize.PAGE_EXPANDED,
           )
-          ,
-          SizedBox(height: 48,)
         ],
       ),
     );

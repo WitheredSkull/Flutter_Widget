@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
 
 abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
   BuildContext _context;
   ///跳转的链接
   String path;
@@ -29,6 +30,7 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
     var content = body();
     initData();
     return Scaffold(
+      key: scaffoldKey,
       appBar: appbar,
       body: content,
     );
@@ -66,6 +68,8 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
       return List<Widget>();
     }
   }
+
+  getScaffoldKey()=>scaffoldKey;
 
   getContext()=>_context;
 

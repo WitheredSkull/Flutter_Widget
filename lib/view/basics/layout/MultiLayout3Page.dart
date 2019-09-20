@@ -89,9 +89,7 @@ class LayoutState extends BaseCodeState<Multi3LayoutPage> {
             color: Colors.white,
             child: CustomMultiChildLayoutWidget(),
           ),
-          SizedBox(
-            height: 48,
-          ),
+          SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
         ],
       ),
     );

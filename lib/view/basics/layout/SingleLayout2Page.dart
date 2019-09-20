@@ -66,7 +66,7 @@ class Layout2State extends BaseCodeState<SingleLayout2Page> {
           IntrinsicWidthWidget(),
           ItemName("IntrinsicWidth"),
           LimitedBoxWidget(),
-          SizedBox(height: 48,)
+          SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
         ],
       ),
     );

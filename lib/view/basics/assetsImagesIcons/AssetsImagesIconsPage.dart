@@ -49,6 +49,7 @@ class AssetsImagesIconsPageState extends BaseCodeState<AssetsImagesIconsPage> {
           ImageWidget(),
           ItemName("RawImage"),
           RawImageWidget(),
+          SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
         ],
       ),
     );

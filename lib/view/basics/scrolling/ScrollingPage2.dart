@@ -47,6 +47,7 @@ class ScrollingPage2State extends BaseCodeState<ScrollingPage2> {
             height: 150,
             child: ScrollBehaviorWidget(),
           ),
+          SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
         ],
       ),
     );

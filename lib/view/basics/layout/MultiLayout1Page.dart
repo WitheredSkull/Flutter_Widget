@@ -68,9 +68,7 @@ class LayoutState extends BaseCodeState<MultiLayout1Page> {
           ),
           ItemName("Wrap"),
           WrapWidget(),
-          SizedBox(
-            height: 48,
-          )
+          SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
         ],
       ),
     );

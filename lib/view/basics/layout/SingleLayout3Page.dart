@@ -73,6 +73,7 @@ class Layout3State extends BaseCodeState<SingleLayout3Page> {
           TransformWidget(),
           ItemName("CustomSingleChildLayout"),
           CustomSingleChildLayoutWidget(),
+          SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
         ],
       ),
     );

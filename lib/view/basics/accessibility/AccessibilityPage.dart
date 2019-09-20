@@ -49,6 +49,7 @@ class AccessibilityState extends BaseCodeState<Accessibility> {
           MergeSemanticsWidget(),
           ItemName("Semantics"),
           SemanticsWidget(),
+          SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
         ],
       ),
     );

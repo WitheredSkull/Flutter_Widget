@@ -3,6 +3,9 @@ import 'package:flutter_widget/presenter/AdvancePresenter.dart';
 import 'package:flutter_widget/view/advance/material/MaterialPage1.dart';
 import 'package:flutter_widget/view/advance/material/MaterialPage2.dart';
 import 'package:flutter_widget/view/advance/material/MaterialPage3.dart';
+import 'package:flutter_widget/view/advance/material/MaterialPage4.dart';
+import 'package:flutter_widget/view/advance/material/MaterialPage5.dart';
+import 'package:flutter_widget/view/advance/material/MaterialPage6.dart';
 import 'package:flutter_widget/view/widget/custom/Item.dart';
 import 'package:flutter_widget/view/widget/custom/Rectangle.dart';
 
@@ -72,7 +75,7 @@ class AdvanceState extends State<AdvancePage> {
           subtitle: presenter.materialComponents[3].subtitle,
           onTap: () {
             Navigator.push(context, MaterialPageRoute(builder: (setting) {
-              return MaterialPage1(
+              return MaterialPage4(
                 presenter.materialComponents[3],
               );
             }));
@@ -84,7 +87,7 @@ class AdvanceState extends State<AdvancePage> {
           subtitle: presenter.materialComponents[4].subtitle,
           onTap: () {
             Navigator.push(context, MaterialPageRoute(builder: (setting) {
-              return MaterialPage1(
+              return MaterialPage5(
                 presenter.materialComponents[4],
               );
             }));
@@ -96,7 +99,7 @@ class AdvanceState extends State<AdvancePage> {
           subtitle: presenter.materialComponents[5].subtitle,
           onTap: () {
             Navigator.push(context, MaterialPageRoute(builder: (setting) {
-              return MaterialPage1(
+              return MaterialPage6(
                 presenter.materialComponents[5],
               );
             }));

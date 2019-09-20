@@ -81,9 +81,7 @@ class AnimationMotionPage1State extends BaseCodeState<AnimationMotionPage1>
           AnimatedListStateWidget(),
           ItemName("AnimatedModalBarrier"),
           AnimatedModalBarrierWidget(),
-          SizedBox(
-            height: 48,
-          ),
+          SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
         ],
       ),
     );

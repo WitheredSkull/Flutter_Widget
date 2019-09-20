@@ -41,7 +41,7 @@ class BasicState extends BaseCodeState<Basic1Page> {
               ColumnWidget(),
               ItemName("Container"),
               ContainerWidget(),
-              SizedBox(height: 48,)
+              SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
             ]));
   }
 

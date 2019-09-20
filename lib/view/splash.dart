@@ -2,26 +2,33 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-class Splash extends StatelessWidget {
+class Splash extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return SplashState();
+  }
+}
+
+class SplashState extends State<Splash> {
   final title = "启动页";
-  var context;
-  Timer _timer;
+
+  @override
+  void initState() {
+    Timer(Duration(seconds: 1), () {
+      Navigator.pop(this.context);
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    this.context = context;
-    this._timer = Timer(Duration(seconds: 1), (){
-        Navigator.pop(this.context);
-    });
     return MaterialApp(
       title: title,
-      home: _getHome(),
+      home: _getHome(context),
     );
   }
 
-
-  _getHome() =>
-      Scaffold(
+  _getHome(BuildContext context) => Scaffold(
         backgroundColor: Colors.lightBlue,
         appBar: AppBar(
           title: Text(title),

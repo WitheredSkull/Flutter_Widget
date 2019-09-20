@@ -40,11 +40,14 @@ class InputState extends BaseCodeState<InputPage> {
             ],
           ),
           ItemName("Form"),
-              FormWidget(inputKey,controller),
+          FormWidget(inputKey, controller),
           ItemName("FormField"),
           FormFieldWidget(),
           ItemName("RawKeyboardListener"),
           RawKeyboardListenerWidget(),
+          SizedBox(
+            height: APP.AssetsSize.PAGE_EXPANDED,
+          )
         ]));
   }
 

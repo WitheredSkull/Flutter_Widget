@@ -42,6 +42,7 @@ class TextState extends BaseCodeState<TextPage> {
         RichTextWidget(),
         ItemName("Text"),
         TextWidget(),
+        SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
       ],
     ));
   }

@@ -59,7 +59,7 @@ class AnimationMotionPage3State extends BaseCodeState<AnimationMotionPage3>
         SizeTransitionWidget(),
         ItemName("SlideTransition"),
         SlideTransitionWidget(),
-        SizedBox(height: 48,)
+        SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
       ],
     ));
   }

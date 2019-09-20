@@ -55,7 +55,7 @@ class AnimationMotionPage2State extends BaseCodeState<AnimationMotionPage2>
         AnimatedSizeWidget(),
         ItemName("AnimatedWidget"),
         AnimatedMeWidget(),
-        SizedBox(height: 48,)
+        SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
       ],
     ));
   }

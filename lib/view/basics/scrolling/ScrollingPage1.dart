@@ -52,7 +52,7 @@ class ScrollingPage1State extends BaseCodeState<ScrollingPage1> {
             height: 500,
             child: NestedScrollViewWidget(),
           ),
-          SizedBox(height: 40,),
+          SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
         ],
       ),
     );

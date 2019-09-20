@@ -87,7 +87,7 @@ class LayoutState extends BaseCodeState<SingleLayout1Page> {
                 color: Colors.white,
                 border: Border.all(color: Colors.black.withOpacity(0.3))),
           ),
-          SizedBox(height: 48,)
+          SizedBox(height: APP.AssetsSize.PAGE_EXPANDED,)
         ],
       ),
     );
