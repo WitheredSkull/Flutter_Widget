@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/model/bean/ItemViewExplainBean.dart';
 import 'package:flutter_widget/view/base/BaseCodeState.dart';
-import 'package:flutter_widget/view/home.dart';
-import 'package:flutter_widget/view/widget/basic/AppbarWidget.dart';
-import 'package:flutter_widget/view/widget/custom/ItemName.dart';
 
 class MaterialPage1 extends StatefulWidget {
   ItemViewExplainBean data;

@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
 
 abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
   BuildContext _context;
+
   ///跳转的链接
   String path;
 
@@ -12,6 +14,9 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
 
   ///是否需要跳转功能
   bool isEnableCode;
+
+  ///是否是IOS界面
+  bool isIos = false;
 
   BaseCodeState({
     this.path,
@@ -22,19 +27,40 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
   @override
   Widget build(BuildContext context) {
     _context = context;
-    var appbar = AppBar(
-      title: Text(title() != null ? title() : ""),
-      backgroundColor: APP.AssetsColor.COLOR_PRIMARY,
-      actions: _getAppbarActions(),
-    );
     var content = body();
     initData();
-    return Scaffold(
-      key: scaffoldKey,
-      appBar: appbar,
-      body: content,
-    );
+//如果是IOS界面使用CupertinoPageScaffold，如果不是默认使用Material的Scaffold
+    return !isIos
+        ? Scaffold(
+            key: scaffoldKey,
+            appBar: getAppBar(),
+            body: content,
+          )
+        : CupertinoPageScaffold(
+            navigationBar: getAppBar(),
+            child: content,
+            resizeToAvoidBottomInset: true,
+          );
   }
+
+  Widget getAppBar() => !isIos
+      ? AppBar(
+          title: Text(title() != null ? title() : ""),
+          backgroundColor: APP.AssetsColor.COLOR_PRIMARY,
+          actions: _getAppbarActions(),
+        )
+      : CupertinoNavigationBar(
+          automaticallyImplyMiddle: true,
+          automaticallyImplyLeading: true,
+          middle: Text(
+            title() != null ? title() : "",
+            style: TextStyle(color: APP.AssetsColor.COLOR_PRIMARY),
+          ),
+          previousPageTitle: title(),
+          trailing: Row(
+            children: _getAppbarActions(),
+          ),
+        );
 
   ///标题
   String title();
@@ -47,6 +73,10 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
     setState(() {
       isEnableCode = enable;
     });
+  }
+
+  setCupertino() {
+    isIos = true;
   }
 
   _getAppbarActions() {
@@ -69,9 +99,9 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
     }
   }
 
-  getScaffoldKey()=>scaffoldKey;
+  getScaffoldKey() => scaffoldKey;
 
-  getContext()=>_context;
+  getContext() => _context;
 
   startCode(String path) {}
 }

@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/presenter/AdvancePresenter.dart';
+import 'package:flutter_widget/view/advance/cupertino/CupertinoPage1.dart';
 import 'package:flutter_widget/view/advance/material/MaterialPage1.dart';
 import 'package:flutter_widget/view/advance/material/MaterialPage2.dart';
 import 'package:flutter_widget/view/advance/material/MaterialPage3.dart';
@@ -21,9 +23,9 @@ class AdvanceState extends State<AdvancePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scrollbar(
+    return SingleChildScrollView(
         child: Column(
-      children: <Widget>[_getMaterialComponents()],
+      children: <Widget>[_getMaterialComponents(), _getCupertinoComponents()],
     ));
   }
 
@@ -101,6 +103,64 @@ class AdvanceState extends State<AdvancePage> {
             Navigator.push(context, MaterialPageRoute(builder: (setting) {
               return MaterialPage6(
                 presenter.materialComponents[5],
+              );
+            }));
+          },
+        ),
+      ],
+    );
+  }
+
+  Widget _getCupertinoComponents() {
+    return RectangleContainer(
+      "Cupertino 组件(IOS 风格)",
+      subtitle:
+          "Beautiful and high-fidelity widgets for current iOS design language.",
+      children: <Widget>[
+        ItemView(
+          presenter.cupertinoComponents[0].title,
+          beHindText: presenter.cupertinoComponents[0].behindTitle,
+          subtitle: presenter.cupertinoComponents[0].subtitle,
+          onTap: () {
+            Navigator.push(context, CupertinoPageRoute(builder: (setting) {
+              return CupertinoPage1(
+                presenter.cupertinoComponents[0],
+              );
+            }));
+          },
+        ),
+        ItemView(
+          presenter.cupertinoComponents[1].title,
+          beHindText: presenter.cupertinoComponents[1].behindTitle,
+          subtitle: presenter.cupertinoComponents[1].subtitle,
+          onTap: () {
+            Navigator.push(context, CupertinoPageRoute(builder: (setting) {
+              return MaterialPage2(
+                presenter.cupertinoComponents[1],
+              );
+            }));
+          },
+        ),
+        ItemView(
+          presenter.cupertinoComponents[2].title,
+          beHindText: presenter.cupertinoComponents[2].behindTitle,
+          subtitle: presenter.cupertinoComponents[2].subtitle,
+          onTap: () {
+            Navigator.push(context, CupertinoPageRoute(builder: (setting) {
+              return MaterialPage3(
+                presenter.cupertinoComponents[2],
+              );
+            }));
+          },
+        ),
+        ItemView(
+          presenter.cupertinoComponents[3].title,
+          beHindText: presenter.cupertinoComponents[3].behindTitle,
+          subtitle: presenter.cupertinoComponents[3].subtitle,
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (setting) {
+              return MaterialPage4(
+                presenter.cupertinoComponents[3],
               );
             }));
           },

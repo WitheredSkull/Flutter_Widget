@@ -39,6 +39,9 @@ class MaterialPage6State extends BaseCodeState<MaterialPage6> {
         ListTileWidget(),
         ItemName("Stepper"),
         StepperWidget(),
+        SizedBox(
+          height: APP.AssetsSize.PAGE_EXPANDED,
+        )
       ]),
     );
   }
