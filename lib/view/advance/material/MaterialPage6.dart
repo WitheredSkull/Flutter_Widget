@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/model/bean/ItemViewExplainBean.dart';
 import 'package:flutter_widget/view/base/BaseCodeState.dart';
-import 'package:flutter_widget/view/widget/custom/DefaultButton.dart';
 import 'package:flutter_widget/view/widget/custom/Explan.dart';
 import 'package:flutter_widget/view/widget/custom/ItemName.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
 import 'package:flutter_widget/view/widget/material/DividerWidget.dart';
 import 'package:flutter_widget/view/widget/material/ListTileWidget.dart';
+import 'package:flutter_widget/view/widget/material/StepperWidget.dart';
 
 class MaterialPage6 extends StatefulWidget {
   ItemViewExplainBean data;
@@ -37,6 +37,8 @@ class MaterialPage6State extends BaseCodeState<MaterialPage6> {
         DividerWidget(),
         ItemName("ListTile"),
         ListTileWidget(),
+        ItemName("Stepper"),
+        StepperWidget(),
       ]),
     );
   }
