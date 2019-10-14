@@ -3,7 +3,7 @@ import 'package:flutter_widget/view/splash.dart';
 import 'package:flutter_widget/view/home.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
 
-import 'widget/custom/Toast.dart';
+import 'view/widget/custom/Toast.dart';
 
 void main() => runApp(MainApp());
 

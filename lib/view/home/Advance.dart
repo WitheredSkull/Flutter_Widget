@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget/presenter/AdvancePresenter.dart';
-import 'package:flutter_widget/view/advance/cupertino/CupertinoPage1.dart';
+import 'package:flutter_widget/view/advance/cupertino/CupertinoPage0.dart';
+import 'package:flutter_widget/view/advance/cupertino/CupertinoPage2.dart';
+import 'package:flutter_widget/view/advance/cupertino/CupertinoPage3.dart';
+import 'package:flutter_widget/view/advance/cupertino/CupertinoPage4.dart';
 import 'package:flutter_widget/view/advance/material/MaterialPage1.dart';
 import 'package:flutter_widget/view/advance/material/MaterialPage2.dart';
 import 'package:flutter_widget/view/advance/material/MaterialPage3.dart';
@@ -122,8 +125,9 @@ class AdvanceState extends State<AdvancePage> {
           beHindText: presenter.cupertinoComponents[0].behindTitle,
           subtitle: presenter.cupertinoComponents[0].subtitle,
           onTap: () {
+            print(presenter.cupertinoComponents[0].toString());
             Navigator.push(context, CupertinoPageRoute(builder: (setting) {
-              return CupertinoPage1(
+              return CupertinoPage0(
                 presenter.cupertinoComponents[0],
               );
             }));
@@ -134,8 +138,9 @@ class AdvanceState extends State<AdvancePage> {
           beHindText: presenter.cupertinoComponents[1].behindTitle,
           subtitle: presenter.cupertinoComponents[1].subtitle,
           onTap: () {
+            print(presenter.cupertinoComponents[0].toString());
             Navigator.push(context, CupertinoPageRoute(builder: (setting) {
-              return MaterialPage2(
+              return CupertinoPage2(
                 presenter.cupertinoComponents[1],
               );
             }));
@@ -147,7 +152,7 @@ class AdvanceState extends State<AdvancePage> {
           subtitle: presenter.cupertinoComponents[2].subtitle,
           onTap: () {
             Navigator.push(context, CupertinoPageRoute(builder: (setting) {
-              return MaterialPage3(
+              return CupertinoPage3(
                 presenter.cupertinoComponents[2],
               );
             }));
@@ -158,8 +163,8 @@ class AdvanceState extends State<AdvancePage> {
           beHindText: presenter.cupertinoComponents[3].behindTitle,
           subtitle: presenter.cupertinoComponents[3].subtitle,
           onTap: () {
-            Navigator.push(context, MaterialPageRoute(builder: (setting) {
-              return MaterialPage4(
+            Navigator.push(context, CupertinoPageRoute(builder: (setting) {
+              return CupertinoPage4(
                 presenter.cupertinoComponents[3],
               );
             }));
