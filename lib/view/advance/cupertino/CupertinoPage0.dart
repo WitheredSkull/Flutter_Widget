@@ -1,6 +1,12 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_widget/model/bean/ItemViewExplainBean.dart';
 import 'package:flutter_widget/view/base/BaseCodeState.dart';
+import 'package:flutter_widget/view/widget/cupertino/CupertinoActionSheetWidget.dart';
+import 'package:flutter_widget/view/widget/cupertino/CupertinoActivityIndicatorWidget.dart';
+import 'package:flutter_widget/view/widget/cupertino/CupertinoAlertDialogWidget.dart';
+import 'package:flutter_widget/view/widget/cupertino/CupertinoButtonWidget.dart';
+import 'package:flutter_widget/view/widget/cupertino/CupertinoDatePickerWidget.dart';
 import 'package:flutter_widget/view/widget/custom/DefaultButton.dart';
 import 'package:flutter_widget/view/widget/custom/Explan.dart';
 import 'package:flutter_widget/view/widget/custom/ItemName.dart';
@@ -19,9 +25,9 @@ class CupertinoPage0 extends StatefulWidget {
 }
 
 class CupertinoPage0State extends BaseCodeState<CupertinoPage0> {
-  CupertinoPage1State() {
-    setCupertino();
-  }
+
+  @override
+  bool isIos() =>true;
 
   @override
   Widget body() {
@@ -35,7 +41,18 @@ class CupertinoPage0State extends BaseCodeState<CupertinoPage0> {
           Text(widget.data.explain)
         ],
       ),
-      ItemName("CheckBox"),
+      ItemName("CupertinoActionSheet"),
+      DefaultButton("show CupertinoActionSheet", () {
+        CupertinoActionSheetWidget.showCupertinoActionSheet(context);
+      }),
+      ItemName("CupertinoActivityIndicator"),
+      CupertinoActivityIndicatorWidget(),
+      ItemName("CupertinoAlertDialog"),
+      DefaultButton("show CupertinoAlertDialog", () {
+        CupertinoAlertDialogWidget.showCupertinoAlertDialog1(context);
+      }),
+      ItemName("CupertinoButton"),
+      CupertinoButtonWidget(),
     ]));
   }
 

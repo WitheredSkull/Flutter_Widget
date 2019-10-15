@@ -20,9 +20,8 @@ class CupertinoPage3 extends StatefulWidget {
 
 class CupertinoPage3State extends BaseCodeState<CupertinoPage3> {
 
-  CupertinoPage1State(){
-    setCupertino();
-  }
+  @override
+  bool isIos() =>true;
 
   @override
   Widget body() {

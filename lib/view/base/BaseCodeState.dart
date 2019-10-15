@@ -15,8 +15,6 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
   ///是否需要跳转功能
   bool isEnableCode;
 
-  ///是否是IOS界面
-  bool isIos = false;
 
   BaseCodeState({
     this.path,
@@ -29,8 +27,9 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
     _context = context;
     var content = body();
     initData();
+    print("$isIos");
 //如果是IOS界面使用CupertinoPageScaffold，如果不是默认使用Material的Scaffold
-    return !isIos
+    return !isIos()
         ? Scaffold(
             key: scaffoldKey,
             appBar: getAppBar(),
@@ -43,7 +42,7 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
           );
   }
 
-  Widget getAppBar() => !isIos
+  Widget getAppBar() => !isIos()
       ? AppBar(
           title: Text(title() != null ? title() : ""),
           backgroundColor: APP.AssetsColor.COLOR_PRIMARY,
@@ -69,14 +68,12 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
 
   void initData();
 
+  bool isIos()=>false;
+
   enableCode(bool enable) {
     setState(() {
       isEnableCode = enable;
     });
-  }
-
-  setCupertino() {
-    isIos = true;
   }
 
   _getAppbarActions() {
