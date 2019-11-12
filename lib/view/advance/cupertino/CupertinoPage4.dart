@@ -5,6 +5,12 @@ import 'package:flutter_widget/view/base/BaseCodeState.dart';
 import 'package:flutter_widget/view/widget/cupertino/CupertinoPopupSurfaceWidget.dart';
 import 'package:flutter_widget/view/widget/cupertino/CupertinoScrollbarWidget.dart';
 import 'package:flutter_widget/view/widget/cupertino/CupertinoSegmentedControlWidget.dart';
+import 'package:flutter_widget/view/widget/cupertino/CupertinoSliderWidget.dart';
+import 'package:flutter_widget/view/widget/cupertino/CupertinoSwitchWidget.dart';
+import 'package:flutter_widget/view/widget/cupertino/CupertinoTabBarWidget.dart';
+import 'package:flutter_widget/view/widget/cupertino/CupertinoTabScaffoldWidget.dart';
+import 'package:flutter_widget/view/widget/cupertino/CupertinoTextFieldWidget.dart';
+import 'package:flutter_widget/view/widget/cupertino/CupertinoTimerPickerWidget.dart';
 import 'package:flutter_widget/view/widget/custom/DefaultButton.dart';
 import 'package:flutter_widget/view/widget/custom/Explan.dart';
 import 'package:flutter_widget/view/widget/custom/ItemName.dart';
@@ -49,6 +55,24 @@ class CupertinoPage4State extends BaseCodeState<CupertinoPage4> {
       ),
       ItemName("CupertinoSegmentedControl"),
       CupertinoSegmentedControlWidget(),
+      ItemName("CupertinoSlider"),
+      CupertinoSliderWidget(),
+      ItemName("CupertinoSwitch"),
+      CupertinoSwitchWidget(),
+      ItemName("CupertinoTabBar"),
+      CupertinoTabBarWidget(),
+      ItemName("CupertinoTabScaffold and CupertinoTabView"),
+      DefaultButton("点击查看", () {
+        Navigator.of(context).push(CupertinoPageRoute(builder: (context) {
+          return CupertinoTabScaffoldWidget();
+        }));
+      }),
+      ItemName("CupertinoTextField"),
+      CupertinoTextFieldWidget(),
+      ItemName("CupertinoTimerPicker"),
+      DefaultButton("show CupertinoTimerPicker", () {
+        CupertinoTimerPickerWidget.showCupertinoTimerPickerDialog(context);
+      })
     ]));
   }
 

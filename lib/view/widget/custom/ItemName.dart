@@ -21,6 +21,7 @@ class ItemName extends StatelessWidget {
 
   _getDataView() => Text(
         data,
+        textAlign: TextAlign.center,
         style: TextStyle(
             backgroundColor: Color(0xFF717c86),
             color: Colors.white,
@@ -30,6 +31,7 @@ class ItemName extends StatelessWidget {
 
   _getSubDataView() => Text(
         subData,
+        textAlign: TextAlign.center,
         style: TextStyle(
             backgroundColor: Color(0xFF2a3841),
             color: Colors.white,
