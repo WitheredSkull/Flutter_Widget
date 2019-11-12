@@ -38,7 +38,6 @@ class FormWidget extends StatelessWidget {
           }
         },
         onChanged: () {
-          Toast().show("测试${controller.text}");
           if (controller.text.length < 3) {
             print("字数不够");
           }else{

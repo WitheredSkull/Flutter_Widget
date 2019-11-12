@@ -37,7 +37,7 @@ abstract class BaseCodeState<T extends StatefulWidget> extends State<T> {
           )
         : CupertinoPageScaffold(
             navigationBar: getAppBar(),
-            child: content,
+            child:Center(child: content,),
             resizeToAvoidBottomInset: true,
           );
   }

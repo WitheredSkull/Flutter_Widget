@@ -1,43 +1,46 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_widget/application/app.dart';
 
 class Toast {
-  BuildContext _context;
   static final Toast _instance = Toast._internal();
-
 
   factory Toast() => _instance;
 
   Toast._internal();
 
-  void init(BuildContext context) {
-    _context = context;
-  }
-
-  void show(msg, {Duration duration}) {
-    print("进来了");
-    showDialog(
-        context: _context,
-        barrierDismissible: false,
-        builder: (context) {
-          Future.delayed(duration != null ? duration : Duration(seconds: 2),
-              () {
-            Navigator.pop(context);
-          });
-          return ToastView(msg);
-        });
-  }
-}
-
-class ToastView extends StatelessWidget {
-  String msg;
-
-  ToastView(this.msg);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black.withOpacity(0.3),
-      child: Text(msg),
-    );
+  static show(BuildContext context, msg, {Duration duration}) {
+    var overlayEntry = OverlayEntry(builder: (context) {
+      return Positioned(
+        bottom: 0,
+        left: 0,
+        right: 0,
+        child: Container(
+          color: AssetsColor.COLOR_BACKGROUND_3,
+          alignment: Alignment.center,
+          padding: EdgeInsets.fromLTRB(0, 14, 0, 14),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text(
+                msg,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontStyle: FontStyle.normal,
+                    decoration: TextDecoration.none,
+                    fontSize: 14),
+              )
+            ],
+          ),
+        ),
+      );
+    });
+    Overlay.of(context).insert(overlayEntry);
+    Future.delayed(duration != null ? duration : Duration(seconds: 1))
+        .then((t) {
+      overlayEntry.remove();
+    });
   }
 }

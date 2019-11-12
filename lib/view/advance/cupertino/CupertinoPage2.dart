@@ -8,6 +8,7 @@ import 'package:flutter_widget/view/widget/custom/DefaultButton.dart';
 import 'package:flutter_widget/view/widget/custom/Explan.dart';
 import 'package:flutter_widget/view/widget/custom/ItemName.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
+import 'package:flutter_widget/view/widget/custom/Toast.dart';
 
 class CupertinoPage2 extends StatefulWidget {
   ItemViewExplainBean data;
@@ -65,14 +66,14 @@ class CupertinoPage2State extends BaseCodeState<CupertinoPage2>
       DefaultButton("show CupertinoFullscreenDialogTransition", () {
         CupertinoFullscreenDialogTransitionWidget
             .showCupertinoFullscreenDialogTransition(context, animation);
-        if(!animation.isCompleted) {
+        if (!animation.isCompleted) {
           controller.forward();
-        }else{
+        } else {
           controller.reset();
           controller.forward();
         }
       }),
-          CupertinoNavigationBar(middle: Text("测试"),)
+//          CupertinoNavigationBar(middle: Text("测试"),)
     ]));
   }
 

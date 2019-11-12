@@ -10,7 +10,6 @@ void main() => runApp(MainApp());
 class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-//    Toast().init(context);
     return MaterialApp(
       theme: ThemeData(
           scaffoldBackgroundColor: APP.AssetsColor.COLOR_BACKGROUND,
