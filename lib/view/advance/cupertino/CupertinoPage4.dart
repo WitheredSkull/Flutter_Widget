@@ -72,7 +72,10 @@ class CupertinoPage4State extends BaseCodeState<CupertinoPage4> {
       ItemName("CupertinoTimerPicker"),
       DefaultButton("show CupertinoTimerPicker", () {
         CupertinoTimerPickerWidget.showCupertinoTimerPickerDialog(context);
-      })
+      }),
+      SizedBox(
+        height: APP.AssetsSize.PAGE_EXPANDED,
+      )
     ]));
   }
 
