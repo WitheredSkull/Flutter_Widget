@@ -4,6 +4,7 @@ import 'package:flutter_widget/model/data/WidgetData.dart';
 class AdvancePresenter {
   List<ItemViewExplainBean> materialComponents = [];
   List<ItemViewExplainBean> cupertinoComponents = [];
+  List<ItemViewExplainBean> interactionModels = [];
   int _cupertinoPage = 5;
 
   AdvancePresenter() {
@@ -13,6 +14,7 @@ class AdvancePresenter {
   _initItemData() {
     _setMaterialComponents();
     _setCupertinoComponents();
+    _setInteractionModels();
   }
 
   _setMaterialComponents() {
@@ -66,6 +68,29 @@ class AdvancePresenter {
         "Beautiful and high-fidelity widgets for current iOS design language.",
         Cupertino.sublist(singlePageWidgetCount * 3, Cupertino.length)
             .toString(),
+        ""));
+  }
+
+  _setInteractionModels() {
+    int singlePageWidgetCount =
+        (InteractionModelsTouchInteractions.length / 2).toInt();
+    interactionModels.add(ItemViewExplainBean(
+        "Interaction model widgets",
+        "Respond to touch events and route users to different views.",
+        InteractionModelsTouchInteractions.sublist(0, singlePageWidgetCount)
+            .toString(),
+        ""));
+    interactionModels.add(ItemViewExplainBean(
+        "Interaction model widgets",
+        "Respond to touch events and route users to different views.",
+        InteractionModelsTouchInteractions.sublist(singlePageWidgetCount,
+                InteractionModelsTouchInteractions.length)
+            .toString(),
+        ""));
+    interactionModels.add(ItemViewExplainBean(
+        "Interaction model widgets",
+        "Respond to touch events and route users to different views.",
+        InteractionModelsRouting.toString().toString(),
         ""));
   }
 }

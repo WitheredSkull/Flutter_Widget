@@ -5,6 +5,9 @@ import 'package:flutter_widget/view/advance/cupertino/CupertinoPage0.dart';
 import 'package:flutter_widget/view/advance/cupertino/CupertinoPage2.dart';
 import 'package:flutter_widget/view/advance/cupertino/CupertinoPage3.dart';
 import 'package:flutter_widget/view/advance/cupertino/CupertinoPage4.dart';
+import 'package:flutter_widget/view/advance/interactions/RoutingPage.dart';
+import 'package:flutter_widget/view/advance/interactions/TouchInteractionsPage0.dart';
+import 'package:flutter_widget/view/advance/interactions/TouchInteractionsPage1.dart';
 import 'package:flutter_widget/view/advance/material/MaterialPage1.dart';
 import 'package:flutter_widget/view/advance/material/MaterialPage2.dart';
 import 'package:flutter_widget/view/advance/material/MaterialPage3.dart';
@@ -28,7 +31,11 @@ class AdvanceState extends State<AdvancePage> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         child: Column(
-      children: <Widget>[_getMaterialComponents(), _getCupertinoComponents()],
+      children: <Widget>[
+        _getMaterialComponents(),
+        _getCupertinoComponents(),
+        _getInteraction(),
+      ],
     ));
   }
 
@@ -166,6 +173,53 @@ class AdvanceState extends State<AdvancePage> {
             Navigator.push(context, CupertinoPageRoute(builder: (setting) {
               return CupertinoPage4(
                 presenter.cupertinoComponents[3],
+              );
+            }));
+          },
+        ),
+      ],
+    );
+  }
+
+  Widget _getInteraction() {
+    return RectangleContainer(
+      "Interaction 交互部件",
+      subtitle: "Respond to touch events and route users to different views.",
+      children: <Widget>[
+        ItemView(
+          presenter.interactionModels[0].title,
+          beHindText: presenter.interactionModels[0].behindTitle,
+          subtitle: presenter.interactionModels[0].subtitle,
+          onTap: () {
+            print(presenter.interactionModels[0].toString());
+            Navigator.push(context, MaterialPageRoute(builder: (setting) {
+              return TouchInteractionsPage0(
+                presenter.interactionModels[0],
+              );
+            }));
+          },
+        ),
+        ItemView(
+          presenter.interactionModels[1].title,
+          beHindText: presenter.interactionModels[1].behindTitle,
+          subtitle: presenter.interactionModels[1].subtitle,
+          onTap: () {
+            print(presenter.interactionModels[1].toString());
+            Navigator.push(context, MaterialPageRoute(builder: (setting) {
+              return TouchInteractionsPage1(
+                presenter.interactionModels[1],
+              );
+            }));
+          },
+        ),
+        ItemView(
+          presenter.interactionModels[2].title,
+          beHindText: presenter.interactionModels[2].behindTitle,
+          subtitle: presenter.interactionModels[2].subtitle,
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (setting) {
+              return RoutingPage(
+                presenter.interactionModels[2],
               );
             }));
           },

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widget/view/splash.dart';
 import 'package:flutter_widget/view/home.dart';
 import 'package:flutter_widget/application/app.dart' as APP;
+import 'package:flutter_widget/view/widget/interactions/NavigatorUse.dart';
 
 import 'view/widget/custom/Toast.dart';
 
@@ -33,6 +34,11 @@ class MainApp extends StatelessWidget {
         });
       },
       home: HomePage(),
+      routes: {
+        "page1": (context) => NavigatorPage1(1),
+        "page2": (context) => NavigatorPage1(2),
+        "page3": (context) => NavigatorPage1(3),
+      },
     );
   }
 }

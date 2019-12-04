@@ -98,7 +98,7 @@ var Async = [
 ];
 
 ///Respond to touch events and route users to different views.
-var InteractionModels = [
+var InteractionModelsTouchInteractions = [
   "AbsorbPointer",
   "Dismissible",
   "DragTarget",
@@ -107,6 +107,10 @@ var InteractionModels = [
   "IgnorePointer",
   "LongPressDraggable",
   "Scrollable",
+];
+var InteractionModelsRouting = [
+  "Hero",
+  "Navigator"
 ];
 
 ///These widgets apply visual effects to the children without changing their layout, size, or position.
