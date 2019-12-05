@@ -47,12 +47,7 @@ class LayoutState extends BaseCodeState<SingleLayout1Page> {
           ItemName("Container"),
           ContainerWidget(),
           ItemName("Padding"),
-          Container(
-            child: PaddingWidget(),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Colors.black.withOpacity(0.3))),
-          ),
+          PaddingWidget(),
           ItemName("Center"),
           Container(
             child: CenterWidget(),

@@ -5,7 +5,10 @@ class AdvancePresenter {
   List<ItemViewExplainBean> materialComponents = [];
   List<ItemViewExplainBean> cupertinoComponents = [];
   List<ItemViewExplainBean> interactionModels = [];
+  List<ItemViewExplainBean> styling = [];
+  List<ItemViewExplainBean> paintingAndEffect = [];
   int _cupertinoPage = 5;
+  int _paintingAndEffectPage = 2;
 
   AdvancePresenter() {
     _initItemData();
@@ -15,6 +18,8 @@ class AdvancePresenter {
     _setMaterialComponents();
     _setCupertinoComponents();
     _setInteractionModels();
+    _setStyling();
+    _setPaintingAndEffect();
   }
 
   _setMaterialComponents() {
@@ -91,6 +96,50 @@ class AdvancePresenter {
         "Interaction model widgets",
         "Respond to touch events and route users to different views.",
         InteractionModelsRouting.toString().toString(),
+        ""));
+  }
+
+  _setStyling() {
+    styling.add(ItemViewExplainBean(
+        "Styling widgets",
+        "Manage the theme of your app, makes your app responsive to screen sizes, or add padding.",
+        Styling.toString(),
+        ""));
+  }
+
+  _setPaintingAndEffect() {
+    paintingAndEffect.add(ItemViewExplainBean(
+        "Painting and effect widgets",
+        "These widgets apply visual effects to the children without changing their layout, size, or position.",
+        PaintingAndEffects.sublist(0, _paintingAndEffectPage).toString(),
+        ""));
+    paintingAndEffect.add(ItemViewExplainBean(
+        "Painting and effect widgets",
+        "These widgets apply visual effects to the children without changing their layout, size, or position.",
+        PaintingAndEffects.sublist(
+                _paintingAndEffectPage, _paintingAndEffectPage * 2)
+            .toString(),
+        ""));
+    paintingAndEffect.add(ItemViewExplainBean(
+        "Painting and effect widgets",
+        "These widgets apply visual effects to the children without changing their layout, size, or position.",
+        PaintingAndEffects.sublist(
+                _paintingAndEffectPage * 2, _paintingAndEffectPage * 3)
+            .toString(),
+        ""));
+    paintingAndEffect.add(ItemViewExplainBean(
+        "Painting and effect widgets",
+        "These widgets apply visual effects to the children without changing their layout, size, or position.",
+        PaintingAndEffects.sublist(
+                _paintingAndEffectPage * 3, _paintingAndEffectPage * 4)
+            .toString(),
+        ""));
+    paintingAndEffect.add(ItemViewExplainBean(
+        "Painting and effect widgets",
+        "These widgets apply visual effects to the children without changing their layout, size, or position.",
+        PaintingAndEffects.sublist(
+                _paintingAndEffectPage * 4, PaintingAndEffects.length)
+            .toString(),
         ""));
   }
 }

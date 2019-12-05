@@ -14,6 +14,12 @@ import 'package:flutter_widget/view/advance/material/MaterialPage3.dart';
 import 'package:flutter_widget/view/advance/material/MaterialPage4.dart';
 import 'package:flutter_widget/view/advance/material/MaterialPage5.dart';
 import 'package:flutter_widget/view/advance/material/MaterialPage6.dart';
+import 'package:flutter_widget/view/advance/paintingAndEffect/PaintingAndEffectPage0.dart';
+import 'package:flutter_widget/view/advance/paintingAndEffect/PaintingAndEffectPage1.dart';
+import 'package:flutter_widget/view/advance/paintingAndEffect/PaintingAndEffectPage2.dart';
+import 'package:flutter_widget/view/advance/paintingAndEffect/PaintingAndEffectPage3.dart';
+import 'package:flutter_widget/view/advance/paintingAndEffect/PaintingAndEffectPage4.dart';
+import 'package:flutter_widget/view/advance/styling/StylingPage.dart';
 import 'package:flutter_widget/view/widget/custom/Item.dart';
 import 'package:flutter_widget/view/widget/custom/Rectangle.dart';
 
@@ -35,6 +41,8 @@ class AdvanceState extends State<AdvancePage> {
         _getMaterialComponents(),
         _getCupertinoComponents(),
         _getInteraction(),
+        _getStyling(),
+        _getPaintingAndEffect(),
       ],
     ));
   }
@@ -220,6 +228,99 @@ class AdvanceState extends State<AdvancePage> {
             Navigator.push(context, MaterialPageRoute(builder: (setting) {
               return RoutingPage(
                 presenter.interactionModels[2],
+              );
+            }));
+          },
+        ),
+      ],
+    );
+  }
+
+  _getStyling() => RectangleContainer("应用主题管理",
+          subtitle:
+              "Manage the theme of your app, makes your app responsive to screen sizes, or add padding.",
+          children: <Widget>[
+            ItemView(
+              presenter.styling[0].title,
+              beHindText: presenter.styling[0].behindTitle,
+              subtitle: presenter.styling[0].subtitle,
+              onTap: () {
+                print(presenter.styling[0].toString());
+                Navigator.push(context, MaterialPageRoute(builder: (setting) {
+                  return StylingPage(
+                    presenter.styling[0],
+                  );
+                }));
+              },
+            ),
+          ]);
+
+  Widget _getPaintingAndEffect() {
+    return RectangleContainer(
+      "一些视觉效果部件",
+      subtitle: "These widgets apply visual effects to the children without changing their layout, size, or position.",
+      children: <Widget>[
+        ItemView(
+          presenter.paintingAndEffect[0].title,
+          beHindText: presenter.paintingAndEffect[0].behindTitle,
+          subtitle: presenter.paintingAndEffect[0].subtitle,
+          onTap: () {
+            print(presenter.paintingAndEffect[0].toString());
+            Navigator.push(context, MaterialPageRoute(builder: (setting) {
+              return PaintingAndEffectPage0(
+                presenter.paintingAndEffect[0],
+              );
+            }));
+          },
+        ),
+        ItemView(
+          presenter.paintingAndEffect[1].title,
+          beHindText: presenter.paintingAndEffect[1].behindTitle,
+          subtitle: presenter.paintingAndEffect[1].subtitle,
+          onTap: () {
+            print(presenter.paintingAndEffect[1].toString());
+            Navigator.push(context, MaterialPageRoute(builder: (setting) {
+              return PaintingAndEffectPage1(
+                presenter.paintingAndEffect[1],
+              );
+            }));
+          },
+        ),
+        ItemView(
+          presenter.paintingAndEffect[2].title,
+          beHindText: presenter.paintingAndEffect[2].behindTitle,
+          subtitle: presenter.paintingAndEffect[2].subtitle,
+          onTap: () {
+            print(presenter.paintingAndEffect[2].toString());
+            Navigator.push(context, MaterialPageRoute(builder: (setting) {
+              return PaintingAndEffectPage2(
+                presenter.paintingAndEffect[2],
+              );
+            }));
+          },
+        ),
+        ItemView(
+          presenter.paintingAndEffect[3].title,
+          beHindText: presenter.paintingAndEffect[3].behindTitle,
+          subtitle: presenter.paintingAndEffect[3].subtitle,
+          onTap: () {
+            print(presenter.paintingAndEffect[3].toString());
+            Navigator.push(context, MaterialPageRoute(builder: (setting) {
+              return PaintingAndEffectPage3(
+                presenter.paintingAndEffect[3],
+              );
+            }));
+          },
+        ),
+        ItemView(
+          presenter.paintingAndEffect[4].title,
+          beHindText: presenter.paintingAndEffect[4].behindTitle,
+          subtitle: presenter.paintingAndEffect[4].subtitle,
+          onTap: () {
+            print(presenter.paintingAndEffect[4].toString());
+            Navigator.push(context, MaterialPageRoute(builder: (setting) {
+              return PaintingAndEffectPage4(
+                presenter.paintingAndEffect[4],
               );
             }));
           },
